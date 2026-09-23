@@ -1,0 +1,2484 @@
+{
+  "note": "Exploratory tuning: three seeds, starter opponent, no livestock or land expansions.",
+  "matches": [
+    {
+      "seed": 11,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "version": "0.1.3",
+        "source": "working_tree",
+        "frozen": false,
+        "runtime_sha256": {
+          "kaggriculture_agent/__init__.py": "3df8889d1296a6cb21e544c0fe986bfa53fd7fde2c113b5eb424ceabbd05f02f",
+          "kaggriculture_agent/agent.py": "42f1fae1ad41d309601a3f44bf3eb19754b6d634a1a5ca42d1acdb8454d947f1",
+          "kaggriculture_agent/agronomy.py": "fab8ebbf61a15cdd463b9a3d62b4048fd3aa4ca4529983ed7d9665ff473f88ba",
+          "kaggriculture_agent/domain.py": "ab0282d94ebcdbe2020c776f5054cbe9421f5cdc96092dc5dff779989047d890",
+          "kaggriculture_agent/economy.py": "cbcd0c524523f540009c2b055a2745144d066afffcee3a8ea9c830382a8c0622",
+          "kaggriculture_agent/intelligence.py": "6608c64c055a8105f05bca8eee84dd998f8b2533524dc8f85f948283f2df945b",
+          "kaggriculture_agent/market.py": "07f440720dcffa9c93268cec08aa48a08e1bffc42d6006fcf185252507d90a4a",
+          "kaggriculture_agent/mrlm.py": "04b95d226f89f6b06e31d8aac7b555a328dbc2bad54fe1501ca5c4554ee39331",
+          "kaggriculture_agent/numerics.py": "033b8eb2ae71c9f1b6b55f5e03b8b3e1dc19fbbde56f277f9119694b670d6ffc",
+          "kaggriculture_agent/optimization.py": "9229917d5d9fe4be906cf1af65fa87c36755caf96bb7fbf618f9abe7750f0530",
+          "kaggriculture_agent/planner.py": "3c956125a52a5ec24a9cd6c882d1529b92abe190668325f92daff337ecbcf760",
+          "kaggriculture_agent/quantile.py": "49b5546bf5e98cc5c1e9b132a12159cc3721aac03152238eb3af966c18488cc2",
+          "kaggriculture_agent/quantile_coefficients.json": "b1cfe721687d4ac9c51a202c4731fc10ed180e473d4d77467d803dbaa27b9429",
+          "kaggriculture_agent/scheduler.py": "18949649f65a96dc78c5756f7cdd45ca4227fb4b04742412a1238518aaefaf46"
+        },
+        "runtime_fingerprint_sha256": "6764f61d35714f9a577da29d8a44990a09b71139282e162012dfef1a236196af"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "branch_bound",
+        "integer_node_limit": 64,
+        "market_method": "quadrature",
+        "enable_fertilizer": true,
+        "enable_contextual_bandit": false,
+        "enable_opponent_model": true,
+        "tactical_wheat_reserve": false,
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": false,
+        "enable_expansion": false,
+        "max_cows": 8,
+        "max_sheep": 6,
+        "max_geese": 0,
+        "max_expansions": 3,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.05,
+        "min_recurrent_pulses": 2,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 49048.0,
+      "opponent_money": 3454.0,
+      "margin": 45594.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 1.6925513233681195,
+        "p95_ms": 4.392200033180416,
+        "max_ms": 78.2455001026392
+      },
+      "wall_seconds": 2.9912508999696,
+      "operations_requested": {
+        "PASS": 470,
+        "PLANT": 67,
+        "WEST": 477,
+        "WATER": 705,
+        "NORTH": 459,
+        "SOUTH": 219,
+        "HARVEST": 84,
+        "EAST": 193,
+        "DROP": 33,
+        "DIG": 12
+      },
+      "market_orders_requested": {
+        "HIRE": 87,
+        "BUY_SEED": 37,
+        "SELL": 50
+      },
+      "market_units_requested": {
+        "BUY_SEED/STRAWBERRY": 25,
+        "BUY_SEED/MELON": 27,
+        "BUY_SEED/WHEAT": 20,
+        "BUY_SEED/CARROT": 2,
+        "SELL/CARROT": 3,
+        "SELL/WHEAT": 67,
+        "SELL/MELON": 160,
+        "SELL/STRAWBERRY": 76
+      },
+      "plant_requests": {
+        "STRAWBERRY": 21,
+        "MELON": 27,
+        "WHEAT": 18,
+        "CARROT": 1
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "STRAWBERRY": 21,
+          "MELON": 27,
+          "WHEAT": 18,
+          "CARROT": 1
+        },
+        "occupied_tile_states": {
+          "STRAWBERRY": 7877,
+          "MELON": 6348,
+          "WHEAT": 1594,
+          "CARROT": 64
+        },
+        "first_planted_day": {
+          "STRAWBERRY": 0,
+          "MELON": 0,
+          "WHEAT": 0,
+          "CARROT": 0
+        },
+        "peak_plots_by_crop": {
+          "STRAWBERRY": 17,
+          "MELON": 14,
+          "WHEAT": 9,
+          "CARROT": 1
+        },
+        "recurrent_occupied_share": 0.4959390543348234
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 49048.0,
+          "net_cash_change": 46048.0,
+          "minimum_cash": 416.0,
+          "maximum_cash": 49048.0,
+          "positive_net_turn_cash": 50807.0,
+          "negative_net_turn_cash": 4759.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 2,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 4,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 15883
+          },
+          "worker_states_on_locked_tiles": 197,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 25,
+          "peak_workers": 4
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3454.0,
+          "net_cash_change": 454.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3454.0,
+          "positive_net_turn_cash": 674.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 709
+          },
+          "worker_states_on_locked_tiles": 0,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "variant": "premium005"
+    },
+    {
+      "seed": 11,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "version": "0.1.3",
+        "source": "working_tree",
+        "frozen": false,
+        "runtime_sha256": {
+          "kaggriculture_agent/__init__.py": "3df8889d1296a6cb21e544c0fe986bfa53fd7fde2c113b5eb424ceabbd05f02f",
+          "kaggriculture_agent/agent.py": "42f1fae1ad41d309601a3f44bf3eb19754b6d634a1a5ca42d1acdb8454d947f1",
+          "kaggriculture_agent/agronomy.py": "fab8ebbf61a15cdd463b9a3d62b4048fd3aa4ca4529983ed7d9665ff473f88ba",
+          "kaggriculture_agent/domain.py": "ab0282d94ebcdbe2020c776f5054cbe9421f5cdc96092dc5dff779989047d890",
+          "kaggriculture_agent/economy.py": "cbcd0c524523f540009c2b055a2745144d066afffcee3a8ea9c830382a8c0622",
+          "kaggriculture_agent/intelligence.py": "6608c64c055a8105f05bca8eee84dd998f8b2533524dc8f85f948283f2df945b",
+          "kaggriculture_agent/market.py": "07f440720dcffa9c93268cec08aa48a08e1bffc42d6006fcf185252507d90a4a",
+          "kaggriculture_agent/mrlm.py": "04b95d226f89f6b06e31d8aac7b555a328dbc2bad54fe1501ca5c4554ee39331",
+          "kaggriculture_agent/numerics.py": "033b8eb2ae71c9f1b6b55f5e03b8b3e1dc19fbbde56f277f9119694b670d6ffc",
+          "kaggriculture_agent/optimization.py": "9229917d5d9fe4be906cf1af65fa87c36755caf96bb7fbf618f9abe7750f0530",
+          "kaggriculture_agent/planner.py": "3c956125a52a5ec24a9cd6c882d1529b92abe190668325f92daff337ecbcf760",
+          "kaggriculture_agent/quantile.py": "49b5546bf5e98cc5c1e9b132a12159cc3721aac03152238eb3af966c18488cc2",
+          "kaggriculture_agent/quantile_coefficients.json": "b1cfe721687d4ac9c51a202c4731fc10ed180e473d4d77467d803dbaa27b9429",
+          "kaggriculture_agent/scheduler.py": "18949649f65a96dc78c5756f7cdd45ca4227fb4b04742412a1238518aaefaf46"
+        },
+        "runtime_fingerprint_sha256": "6764f61d35714f9a577da29d8a44990a09b71139282e162012dfef1a236196af"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "branch_bound",
+        "integer_node_limit": 64,
+        "market_method": "quadrature",
+        "enable_fertilizer": true,
+        "enable_contextual_bandit": false,
+        "enable_opponent_model": true,
+        "tactical_wheat_reserve": false,
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": false,
+        "enable_expansion": false,
+        "max_cows": 8,
+        "max_sheep": 6,
+        "max_geese": 0,
+        "max_expansions": 3,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.1,
+        "min_recurrent_pulses": 2,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 49073.0,
+      "opponent_money": 3454.0,
+      "margin": 45619.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.22394478563038,
+        "p95_ms": 5.613600020296872,
+        "max_ms": 107.52349998801947
+      },
+      "wall_seconds": 3.8856848999857903,
+      "operations_requested": {
+        "PASS": 497,
+        "PLANT": 67,
+        "WEST": 471,
+        "WATER": 702,
+        "NORTH": 462,
+        "SOUTH": 215,
+        "HARVEST": 85,
+        "EAST": 172,
+        "DROP": 36,
+        "DIG": 12
+      },
+      "market_orders_requested": {
+        "HIRE": 87,
+        "BUY_SEED": 34,
+        "SELL": 47
+      },
+      "market_units_requested": {
+        "BUY_SEED/STRAWBERRY": 26,
+        "BUY_SEED/MELON": 25,
+        "BUY_SEED/WHEAT": 21,
+        "BUY_SEED/CARROT": 2,
+        "SELL/CARROT": 3,
+        "SELL/WHEAT": 70,
+        "SELL/MELON": 148,
+        "SELL/STRAWBERRY": 80
+      },
+      "plant_requests": {
+        "STRAWBERRY": 22,
+        "MELON": 25,
+        "WHEAT": 19,
+        "CARROT": 1
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "STRAWBERRY": 22,
+          "MELON": 25,
+          "WHEAT": 19,
+          "CARROT": 1
+        },
+        "occupied_tile_states": {
+          "STRAWBERRY": 8269,
+          "MELON": 5894,
+          "WHEAT": 1728,
+          "CARROT": 64
+        },
+        "first_planted_day": {
+          "STRAWBERRY": 0,
+          "MELON": 0,
+          "WHEAT": 0,
+          "CARROT": 0
+        },
+        "peak_plots_by_crop": {
+          "STRAWBERRY": 18,
+          "MELON": 13,
+          "WHEAT": 8,
+          "CARROT": 1
+        },
+        "recurrent_occupied_share": 0.5182701347539956
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 49073.0,
+          "net_cash_change": 46073.0,
+          "minimum_cash": 496.0,
+          "maximum_cash": 49073.0,
+          "positive_net_turn_cash": 50814.0,
+          "negative_net_turn_cash": 4741.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 2,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 4,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 15955
+          },
+          "worker_states_on_locked_tiles": 194,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 25,
+          "peak_workers": 4
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3454.0,
+          "net_cash_change": 454.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3454.0,
+          "positive_net_turn_cash": 674.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 709
+          },
+          "worker_states_on_locked_tiles": 0,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "variant": "premium010"
+    },
+    {
+      "seed": 11,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "available": true,
+        "version": "0.1.2",
+        "frozen": true,
+        "archive": "dist\\submission-0.1.2.tar.gz",
+        "sha256": "07984f8d7d88bebd74391e1f603c42e94dabb43e81c22141c1de125a515d47a9"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "branch_bound",
+        "integer_node_limit": 64,
+        "market_method": "quadrature",
+        "enable_fertilizer": true,
+        "enable_contextual_bandit": false,
+        "enable_opponent_model": true,
+        "tactical_wheat_reserve": false,
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": false,
+        "enable_expansion": false,
+        "max_cows": 8,
+        "max_sheep": 4,
+        "max_geese": 0,
+        "max_expansions": 2,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 49137.0,
+      "opponent_money": 3425.0,
+      "margin": 45712.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.3914997173493964,
+        "p95_ms": 6.442499929107726,
+        "max_ms": 138.0643000593409
+      },
+      "wall_seconds": 4.015797800035216,
+      "operations_requested": {
+        "PASS": 361,
+        "PLANT": 76,
+        "WEST": 465,
+        "WATER": 704,
+        "NORTH": 454,
+        "SOUTH": 228,
+        "HARVEST": 91,
+        "EAST": 225,
+        "DROP": 38,
+        "DIG": 9
+      },
+      "market_orders_requested": {
+        "HIRE": 84,
+        "BUY_SEED": 48,
+        "SELL": 57
+      },
+      "market_units_requested": {
+        "BUY_SEED/WHEAT": 32,
+        "BUY_SEED/CARROT": 6,
+        "BUY_SEED/STRAWBERRY": 15,
+        "BUY_SEED/MELON": 27,
+        "SELL/CARROT": 12,
+        "SELL/WHEAT": 110,
+        "BUY_SEED/TOMATO": 2,
+        "SELL/MELON": 161,
+        "SELL/STRAWBERRY": 60,
+        "SELL/TOMATO": 4
+      },
+      "plant_requests": {
+        "STRAWBERRY": 15,
+        "WHEAT": 29,
+        "CARROT": 4,
+        "MELON": 27,
+        "TOMATO": 1
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "STRAWBERRY": 15,
+          "WHEAT": 29,
+          "CARROT": 4,
+          "MELON": 27,
+          "TOMATO": 1
+        },
+        "occupied_tile_states": {
+          "STRAWBERRY": 5877,
+          "WHEAT": 2627,
+          "CARROT": 265,
+          "MELON": 6351,
+          "TOMATO": 270
+        },
+        "first_planted_day": {
+          "STRAWBERRY": 0,
+          "WHEAT": 0,
+          "CARROT": 0,
+          "MELON": 0,
+          "TOMATO": 5
+        },
+        "peak_plots_by_crop": {
+          "STRAWBERRY": 15,
+          "WHEAT": 10,
+          "CARROT": 3,
+          "MELON": 14,
+          "TOMATO": 1
+        },
+        "recurrent_occupied_share": 0.39941520467836256
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 49137.0,
+          "net_cash_change": 46137.0,
+          "minimum_cash": 1304.0,
+          "maximum_cash": 49137.0,
+          "positive_net_turn_cash": 50287.0,
+          "negative_net_turn_cash": 4150.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 3,
+            "CARROT": 2,
+            "TOMATO": 1,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 15390
+          },
+          "worker_states_on_locked_tiles": 196,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 25,
+          "peak_workers": 4
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3425.0,
+          "net_cash_change": 425.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3425.0,
+          "positive_net_turn_cash": 645.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 709
+          },
+          "worker_states_on_locked_tiles": 0,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "variant": "frozen012"
+    },
+    {
+      "seed": 29,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "version": "0.1.3",
+        "source": "working_tree",
+        "frozen": false,
+        "runtime_sha256": {
+          "kaggriculture_agent/__init__.py": "3df8889d1296a6cb21e544c0fe986bfa53fd7fde2c113b5eb424ceabbd05f02f",
+          "kaggriculture_agent/agent.py": "42f1fae1ad41d309601a3f44bf3eb19754b6d634a1a5ca42d1acdb8454d947f1",
+          "kaggriculture_agent/agronomy.py": "fab8ebbf61a15cdd463b9a3d62b4048fd3aa4ca4529983ed7d9665ff473f88ba",
+          "kaggriculture_agent/domain.py": "ab0282d94ebcdbe2020c776f5054cbe9421f5cdc96092dc5dff779989047d890",
+          "kaggriculture_agent/economy.py": "cbcd0c524523f540009c2b055a2745144d066afffcee3a8ea9c830382a8c0622",
+          "kaggriculture_agent/intelligence.py": "6608c64c055a8105f05bca8eee84dd998f8b2533524dc8f85f948283f2df945b",
+          "kaggriculture_agent/market.py": "07f440720dcffa9c93268cec08aa48a08e1bffc42d6006fcf185252507d90a4a",
+          "kaggriculture_agent/mrlm.py": "04b95d226f89f6b06e31d8aac7b555a328dbc2bad54fe1501ca5c4554ee39331",
+          "kaggriculture_agent/numerics.py": "033b8eb2ae71c9f1b6b55f5e03b8b3e1dc19fbbde56f277f9119694b670d6ffc",
+          "kaggriculture_agent/optimization.py": "9229917d5d9fe4be906cf1af65fa87c36755caf96bb7fbf618f9abe7750f0530",
+          "kaggriculture_agent/planner.py": "3c956125a52a5ec24a9cd6c882d1529b92abe190668325f92daff337ecbcf760",
+          "kaggriculture_agent/quantile.py": "49b5546bf5e98cc5c1e9b132a12159cc3721aac03152238eb3af966c18488cc2",
+          "kaggriculture_agent/quantile_coefficients.json": "b1cfe721687d4ac9c51a202c4731fc10ed180e473d4d77467d803dbaa27b9429",
+          "kaggriculture_agent/scheduler.py": "18949649f65a96dc78c5756f7cdd45ca4227fb4b04742412a1238518aaefaf46"
+        },
+        "runtime_fingerprint_sha256": "6764f61d35714f9a577da29d8a44990a09b71139282e162012dfef1a236196af"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "branch_bound",
+        "integer_node_limit": 64,
+        "market_method": "quadrature",
+        "enable_fertilizer": true,
+        "enable_contextual_bandit": false,
+        "enable_opponent_model": true,
+        "tactical_wheat_reserve": false,
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": false,
+        "enable_expansion": false,
+        "max_cows": 8,
+        "max_sheep": 6,
+        "max_geese": 0,
+        "max_expansions": 3,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.05,
+        "min_recurrent_pulses": 2,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 47345.0,
+      "opponent_money": 3528.0,
+      "margin": 43817.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.2464642577748926,
+        "p95_ms": 5.378299974836409,
+        "max_ms": 121.1662000278011
+      },
+      "wall_seconds": 3.8962115000467747,
+      "operations_requested": {
+        "PASS": 476,
+        "PLANT": 71,
+        "WEST": 468,
+        "WATER": 711,
+        "NORTH": 459,
+        "SOUTH": 208,
+        "HARVEST": 85,
+        "EAST": 174,
+        "DROP": 33,
+        "DIG": 11
+      },
+      "market_orders_requested": {
+        "HIRE": 86,
+        "BUY_SEED": 40,
+        "SELL": 46
+      },
+      "market_units_requested": {
+        "BUY_SEED/STRAWBERRY": 23,
+        "BUY_SEED/MELON": 27,
+        "BUY_SEED/WHEAT": 16,
+        "BUY_SEED/CARROT": 11,
+        "SELL/CARROT": 30,
+        "SELL/WHEAT": 46,
+        "SELL/MELON": 161,
+        "SELL/STRAWBERRY": 72
+      },
+      "plant_requests": {
+        "STRAWBERRY": 21,
+        "MELON": 27,
+        "WHEAT": 13,
+        "CARROT": 10
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "STRAWBERRY": 21,
+          "MELON": 27,
+          "WHEAT": 13,
+          "CARROT": 10
+        },
+        "occupied_tile_states": {
+          "STRAWBERRY": 7680,
+          "MELON": 6364,
+          "WHEAT": 1188,
+          "CARROT": 643
+        },
+        "first_planted_day": {
+          "STRAWBERRY": 0,
+          "MELON": 0,
+          "WHEAT": 0,
+          "CARROT": 0
+        },
+        "peak_plots_by_crop": {
+          "STRAWBERRY": 15,
+          "MELON": 14,
+          "WHEAT": 4,
+          "CARROT": 6
+        },
+        "recurrent_occupied_share": 0.4837795275590551
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 47345.0,
+          "net_cash_change": 44345.0,
+          "minimum_cash": 328.0,
+          "maximum_cash": 47345.0,
+          "positive_net_turn_cash": 49156.0,
+          "negative_net_turn_cash": 4811.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 3,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 2,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 15875
+          },
+          "worker_states_on_locked_tiles": 188,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 25,
+          "peak_workers": 4
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3528.0,
+          "net_cash_change": 528.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3528.0,
+          "positive_net_turn_cash": 748.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 709
+          },
+          "worker_states_on_locked_tiles": 0,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "variant": "premium005"
+    },
+    {
+      "seed": 29,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "version": "0.1.3",
+        "source": "working_tree",
+        "frozen": false,
+        "runtime_sha256": {
+          "kaggriculture_agent/__init__.py": "3df8889d1296a6cb21e544c0fe986bfa53fd7fde2c113b5eb424ceabbd05f02f",
+          "kaggriculture_agent/agent.py": "42f1fae1ad41d309601a3f44bf3eb19754b6d634a1a5ca42d1acdb8454d947f1",
+          "kaggriculture_agent/agronomy.py": "fab8ebbf61a15cdd463b9a3d62b4048fd3aa4ca4529983ed7d9665ff473f88ba",
+          "kaggriculture_agent/domain.py": "ab0282d94ebcdbe2020c776f5054cbe9421f5cdc96092dc5dff779989047d890",
+          "kaggriculture_agent/economy.py": "cbcd0c524523f540009c2b055a2745144d066afffcee3a8ea9c830382a8c0622",
+          "kaggriculture_agent/intelligence.py": "6608c64c055a8105f05bca8eee84dd998f8b2533524dc8f85f948283f2df945b",
+          "kaggriculture_agent/market.py": "07f440720dcffa9c93268cec08aa48a08e1bffc42d6006fcf185252507d90a4a",
+          "kaggriculture_agent/mrlm.py": "04b95d226f89f6b06e31d8aac7b555a328dbc2bad54fe1501ca5c4554ee39331",
+          "kaggriculture_agent/numerics.py": "033b8eb2ae71c9f1b6b55f5e03b8b3e1dc19fbbde56f277f9119694b670d6ffc",
+          "kaggriculture_agent/optimization.py": "9229917d5d9fe4be906cf1af65fa87c36755caf96bb7fbf618f9abe7750f0530",
+          "kaggriculture_agent/planner.py": "3c956125a52a5ec24a9cd6c882d1529b92abe190668325f92daff337ecbcf760",
+          "kaggriculture_agent/quantile.py": "49b5546bf5e98cc5c1e9b132a12159cc3721aac03152238eb3af966c18488cc2",
+          "kaggriculture_agent/quantile_coefficients.json": "b1cfe721687d4ac9c51a202c4731fc10ed180e473d4d77467d803dbaa27b9429",
+          "kaggriculture_agent/scheduler.py": "18949649f65a96dc78c5756f7cdd45ca4227fb4b04742412a1238518aaefaf46"
+        },
+        "runtime_fingerprint_sha256": "6764f61d35714f9a577da29d8a44990a09b71139282e162012dfef1a236196af"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "branch_bound",
+        "integer_node_limit": 64,
+        "market_method": "quadrature",
+        "enable_fertilizer": true,
+        "enable_contextual_bandit": false,
+        "enable_opponent_model": true,
+        "tactical_wheat_reserve": false,
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": false,
+        "enable_expansion": false,
+        "max_cows": 8,
+        "max_sheep": 6,
+        "max_geese": 0,
+        "max_expansions": 3,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.1,
+        "min_recurrent_pulses": 2,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 47460.0,
+      "opponent_money": 3528.0,
+      "margin": 43932.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.270995825788159,
+        "p95_ms": 6.029099924489856,
+        "max_ms": 104.41249993164092
+      },
+      "wall_seconds": 3.9026776999235153,
+      "operations_requested": {
+        "PASS": 480,
+        "PLANT": 69,
+        "WEST": 470,
+        "WATER": 707,
+        "NORTH": 456,
+        "SOUTH": 210,
+        "HARVEST": 84,
+        "EAST": 178,
+        "DROP": 31,
+        "DIG": 11
+      },
+      "market_orders_requested": {
+        "HIRE": 86,
+        "BUY_SEED": 39,
+        "SELL": 44
+      },
+      "market_units_requested": {
+        "BUY_SEED/STRAWBERRY": 24,
+        "BUY_SEED/MELON": 27,
+        "BUY_SEED/WHEAT": 16,
+        "BUY_SEED/CARROT": 9,
+        "SELL/CARROT": 24,
+        "SELL/WHEAT": 46,
+        "SELL/MELON": 161,
+        "SELL/STRAWBERRY": 74
+      },
+      "plant_requests": {
+        "STRAWBERRY": 21,
+        "MELON": 27,
+        "WHEAT": 13,
+        "CARROT": 8
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "STRAWBERRY": 21,
+          "MELON": 27,
+          "WHEAT": 13,
+          "CARROT": 8
+        },
+        "occupied_tile_states": {
+          "STRAWBERRY": 7782,
+          "MELON": 6357,
+          "WHEAT": 1187,
+          "CARROT": 504
+        },
+        "first_planted_day": {
+          "STRAWBERRY": 0,
+          "MELON": 0,
+          "WHEAT": 0,
+          "CARROT": 0
+        },
+        "peak_plots_by_crop": {
+          "STRAWBERRY": 16,
+          "MELON": 14,
+          "WHEAT": 4,
+          "CARROT": 5
+        },
+        "recurrent_occupied_share": 0.4915982312065698
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 47460.0,
+          "net_cash_change": 44460.0,
+          "minimum_cash": 328.0,
+          "maximum_cash": 47460.0,
+          "positive_net_turn_cash": 49331.0,
+          "negative_net_turn_cash": 4871.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 3,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 3,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 15830
+          },
+          "worker_states_on_locked_tiles": 188,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 25,
+          "peak_workers": 4
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3528.0,
+          "net_cash_change": 528.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3528.0,
+          "positive_net_turn_cash": 748.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 709
+          },
+          "worker_states_on_locked_tiles": 0,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "variant": "premium010"
+    },
+    {
+      "seed": 29,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "available": true,
+        "version": "0.1.2",
+        "frozen": true,
+        "archive": "dist\\submission-0.1.2.tar.gz",
+        "sha256": "07984f8d7d88bebd74391e1f603c42e94dabb43e81c22141c1de125a515d47a9"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "branch_bound",
+        "integer_node_limit": 64,
+        "market_method": "quadrature",
+        "enable_fertilizer": true,
+        "enable_contextual_bandit": false,
+        "enable_opponent_model": true,
+        "tactical_wheat_reserve": false,
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": false,
+        "enable_expansion": false,
+        "max_cows": 8,
+        "max_sheep": 4,
+        "max_geese": 0,
+        "max_expansions": 2,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 47405.0,
+      "opponent_money": 3524.0,
+      "margin": 43881.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.32439916852929,
+        "p95_ms": 6.647599977441132,
+        "max_ms": 154.01140006724745
+      },
+      "wall_seconds": 3.8238089999649674,
+      "operations_requested": {
+        "PASS": 403,
+        "PLANT": 86,
+        "WEST": 461,
+        "WATER": 699,
+        "NORTH": 444,
+        "SOUTH": 202,
+        "HARVEST": 100,
+        "EAST": 189,
+        "DROP": 33,
+        "DIG": 11
+      },
+      "market_orders_requested": {
+        "HIRE": 83,
+        "BUY_SEED": 50,
+        "SELL": 56
+      },
+      "market_units_requested": {
+        "BUY_SEED/WHEAT": 17,
+        "BUY_SEED/CARROT": 33,
+        "BUY_SEED/STRAWBERRY": 14,
+        "BUY_SEED/MELON": 26,
+        "SELL/CARROT": 85,
+        "SELL/WHEAT": 62,
+        "SELL/MELON": 156,
+        "SELL/STRAWBERRY": 56
+      },
+      "plant_requests": {
+        "STRAWBERRY": 14,
+        "WHEAT": 16,
+        "CARROT": 30,
+        "MELON": 26
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "STRAWBERRY": 14,
+          "WHEAT": 16,
+          "CARROT": 30,
+          "MELON": 26
+        },
+        "occupied_tile_states": {
+          "STRAWBERRY": 5468,
+          "WHEAT": 1475,
+          "CARROT": 1967,
+          "MELON": 6168
+        },
+        "first_planted_day": {
+          "STRAWBERRY": 0,
+          "WHEAT": 0,
+          "CARROT": 0,
+          "MELON": 0
+        },
+        "peak_plots_by_crop": {
+          "STRAWBERRY": 14,
+          "WHEAT": 6,
+          "CARROT": 15,
+          "MELON": 13
+        },
+        "recurrent_occupied_share": 0.3626475659901844
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 47405.0,
+          "net_cash_change": 44405.0,
+          "minimum_cash": 644.0,
+          "maximum_cash": 47405.0,
+          "positive_net_turn_cash": 48633.0,
+          "negative_net_turn_cash": 4228.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 1,
+            "CARROT": 3,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 15078
+          },
+          "worker_states_on_locked_tiles": 189,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 25,
+          "peak_workers": 4
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3524.0,
+          "net_cash_change": 524.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3524.0,
+          "positive_net_turn_cash": 744.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 709
+          },
+          "worker_states_on_locked_tiles": 0,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "variant": "frozen012"
+    },
+    {
+      "seed": 47,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "version": "0.1.3",
+        "source": "working_tree",
+        "frozen": false,
+        "runtime_sha256": {
+          "kaggriculture_agent/__init__.py": "3df8889d1296a6cb21e544c0fe986bfa53fd7fde2c113b5eb424ceabbd05f02f",
+          "kaggriculture_agent/agent.py": "42f1fae1ad41d309601a3f44bf3eb19754b6d634a1a5ca42d1acdb8454d947f1",
+          "kaggriculture_agent/agronomy.py": "fab8ebbf61a15cdd463b9a3d62b4048fd3aa4ca4529983ed7d9665ff473f88ba",
+          "kaggriculture_agent/domain.py": "ab0282d94ebcdbe2020c776f5054cbe9421f5cdc96092dc5dff779989047d890",
+          "kaggriculture_agent/economy.py": "cbcd0c524523f540009c2b055a2745144d066afffcee3a8ea9c830382a8c0622",
+          "kaggriculture_agent/intelligence.py": "6608c64c055a8105f05bca8eee84dd998f8b2533524dc8f85f948283f2df945b",
+          "kaggriculture_agent/market.py": "07f440720dcffa9c93268cec08aa48a08e1bffc42d6006fcf185252507d90a4a",
+          "kaggriculture_agent/mrlm.py": "04b95d226f89f6b06e31d8aac7b555a328dbc2bad54fe1501ca5c4554ee39331",
+          "kaggriculture_agent/numerics.py": "033b8eb2ae71c9f1b6b55f5e03b8b3e1dc19fbbde56f277f9119694b670d6ffc",
+          "kaggriculture_agent/optimization.py": "9229917d5d9fe4be906cf1af65fa87c36755caf96bb7fbf618f9abe7750f0530",
+          "kaggriculture_agent/planner.py": "3c956125a52a5ec24a9cd6c882d1529b92abe190668325f92daff337ecbcf760",
+          "kaggriculture_agent/quantile.py": "49b5546bf5e98cc5c1e9b132a12159cc3721aac03152238eb3af966c18488cc2",
+          "kaggriculture_agent/quantile_coefficients.json": "b1cfe721687d4ac9c51a202c4731fc10ed180e473d4d77467d803dbaa27b9429",
+          "kaggriculture_agent/scheduler.py": "18949649f65a96dc78c5756f7cdd45ca4227fb4b04742412a1238518aaefaf46"
+        },
+        "runtime_fingerprint_sha256": "6764f61d35714f9a577da29d8a44990a09b71139282e162012dfef1a236196af"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "branch_bound",
+        "integer_node_limit": 64,
+        "market_method": "quadrature",
+        "enable_fertilizer": true,
+        "enable_contextual_bandit": false,
+        "enable_opponent_model": true,
+        "tactical_wheat_reserve": false,
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": false,
+        "enable_expansion": false,
+        "max_cows": 8,
+        "max_sheep": 6,
+        "max_geese": 0,
+        "max_expansions": 3,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.05,
+        "min_recurrent_pulses": 2,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 49664.0,
+      "opponent_money": 3716.0,
+      "margin": 45948.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.241152155560199,
+        "p95_ms": 5.384400021284819,
+        "max_ms": 95.5868000164628
+      },
+      "wall_seconds": 3.750184299889952,
+      "operations_requested": {
+        "PASS": 461,
+        "PLANT": 74,
+        "WEST": 465,
+        "WATER": 692,
+        "NORTH": 443,
+        "SOUTH": 195,
+        "HARVEST": 90,
+        "EAST": 172,
+        "DROP": 26,
+        "DIG": 10
+      },
+      "market_orders_requested": {
+        "HIRE": 83,
+        "BUY_SEED": 45,
+        "SELL": 40
+      },
+      "market_units_requested": {
+        "BUY_SEED/STRAWBERRY": 24,
+        "BUY_SEED/MELON": 25,
+        "BUY_SEED/WHEAT": 9,
+        "BUY_SEED/CARROT": 30,
+        "SELL/CARROT": 72,
+        "SELL/WHEAT": 24,
+        "SELL/MELON": 148,
+        "SELL/STRAWBERRY": 70
+      },
+      "plant_requests": {
+        "STRAWBERRY": 19,
+        "MELON": 25,
+        "WHEAT": 6,
+        "CARROT": 24
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "STRAWBERRY": 19,
+          "MELON": 25,
+          "WHEAT": 6,
+          "CARROT": 24
+        },
+        "occupied_tile_states": {
+          "STRAWBERRY": 7196,
+          "MELON": 5910,
+          "WHEAT": 543,
+          "CARROT": 1545
+        },
+        "first_planted_day": {
+          "STRAWBERRY": 0,
+          "MELON": 0,
+          "WHEAT": 0,
+          "CARROT": 0
+        },
+        "peak_plots_by_crop": {
+          "STRAWBERRY": 16,
+          "MELON": 13,
+          "WHEAT": 3,
+          "CARROT": 12
+        },
+        "recurrent_occupied_share": 0.47360800315914175
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 49664.0,
+          "net_cash_change": 46664.0,
+          "minimum_cash": 475.0,
+          "maximum_cash": 49664.0,
+          "positive_net_turn_cash": 51626.0,
+          "negative_net_turn_cash": 4962.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 3,
+            "CARROT": 6,
+            "TOMATO": 0,
+            "STRAWBERRY": 5,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 15194
+          },
+          "worker_states_on_locked_tiles": 185,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 25,
+          "peak_workers": 4
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3716.0,
+          "net_cash_change": 716.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3716.0,
+          "positive_net_turn_cash": 936.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 709
+          },
+          "worker_states_on_locked_tiles": 0,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "variant": "premium005"
+    },
+    {
+      "seed": 47,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "version": "0.1.3",
+        "source": "working_tree",
+        "frozen": false,
+        "runtime_sha256": {
+          "kaggriculture_agent/__init__.py": "3df8889d1296a6cb21e544c0fe986bfa53fd7fde2c113b5eb424ceabbd05f02f",
+          "kaggriculture_agent/agent.py": "42f1fae1ad41d309601a3f44bf3eb19754b6d634a1a5ca42d1acdb8454d947f1",
+          "kaggriculture_agent/agronomy.py": "fab8ebbf61a15cdd463b9a3d62b4048fd3aa4ca4529983ed7d9665ff473f88ba",
+          "kaggriculture_agent/domain.py": "ab0282d94ebcdbe2020c776f5054cbe9421f5cdc96092dc5dff779989047d890",
+          "kaggriculture_agent/economy.py": "cbcd0c524523f540009c2b055a2745144d066afffcee3a8ea9c830382a8c0622",
+          "kaggriculture_agent/intelligence.py": "6608c64c055a8105f05bca8eee84dd998f8b2533524dc8f85f948283f2df945b",
+          "kaggriculture_agent/market.py": "07f440720dcffa9c93268cec08aa48a08e1bffc42d6006fcf185252507d90a4a",
+          "kaggriculture_agent/mrlm.py": "04b95d226f89f6b06e31d8aac7b555a328dbc2bad54fe1501ca5c4554ee39331",
+          "kaggriculture_agent/numerics.py": "033b8eb2ae71c9f1b6b55f5e03b8b3e1dc19fbbde56f277f9119694b670d6ffc",
+          "kaggriculture_agent/optimization.py": "9229917d5d9fe4be906cf1af65fa87c36755caf96bb7fbf618f9abe7750f0530",
+          "kaggriculture_agent/planner.py": "3c956125a52a5ec24a9cd6c882d1529b92abe190668325f92daff337ecbcf760",
+          "kaggriculture_agent/quantile.py": "49b5546bf5e98cc5c1e9b132a12159cc3721aac03152238eb3af966c18488cc2",
+          "kaggriculture_agent/quantile_coefficients.json": "b1cfe721687d4ac9c51a202c4731fc10ed180e473d4d77467d803dbaa27b9429",
+          "kaggriculture_agent/scheduler.py": "18949649f65a96dc78c5756f7cdd45ca4227fb4b04742412a1238518aaefaf46"
+        },
+        "runtime_fingerprint_sha256": "6764f61d35714f9a577da29d8a44990a09b71139282e162012dfef1a236196af"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "branch_bound",
+        "integer_node_limit": 64,
+        "market_method": "quadrature",
+        "enable_fertilizer": true,
+        "enable_contextual_bandit": false,
+        "enable_opponent_model": true,
+        "tactical_wheat_reserve": false,
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": false,
+        "enable_expansion": false,
+        "max_cows": 8,
+        "max_sheep": 6,
+        "max_geese": 0,
+        "max_expansions": 3,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.1,
+        "min_recurrent_pulses": 2,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 49918.0,
+      "opponent_money": 3721.0,
+      "margin": 46197.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.2441499320251324,
+        "p95_ms": 5.448800045996904,
+        "max_ms": 97.29599999263883
+      },
+      "wall_seconds": 3.780805499991402,
+      "operations_requested": {
+        "PASS": 451,
+        "PLANT": 73,
+        "WEST": 471,
+        "WATER": 699,
+        "NORTH": 444,
+        "SOUTH": 203,
+        "HARVEST": 89,
+        "EAST": 160,
+        "DROP": 26,
+        "DIG": 12
+      },
+      "market_orders_requested": {
+        "HIRE": 83,
+        "BUY_SEED": 43,
+        "SELL": 40
+      },
+      "market_units_requested": {
+        "BUY_SEED/STRAWBERRY": 25,
+        "BUY_SEED/MELON": 25,
+        "BUY_SEED/WHEAT": 9,
+        "BUY_SEED/CARROT": 26,
+        "SELL/CARROT": 66,
+        "SELL/WHEAT": 24,
+        "SELL/MELON": 148,
+        "SELL/STRAWBERRY": 72
+      },
+      "plant_requests": {
+        "STRAWBERRY": 20,
+        "MELON": 25,
+        "WHEAT": 6,
+        "CARROT": 22
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "STRAWBERRY": 20,
+          "MELON": 25,
+          "WHEAT": 6,
+          "CARROT": 22
+        },
+        "occupied_tile_states": {
+          "STRAWBERRY": 7584,
+          "MELON": 5901,
+          "WHEAT": 543,
+          "CARROT": 1434
+        },
+        "first_planted_day": {
+          "STRAWBERRY": 0,
+          "MELON": 0,
+          "WHEAT": 0,
+          "CARROT": 0
+        },
+        "peak_plots_by_crop": {
+          "STRAWBERRY": 17,
+          "MELON": 13,
+          "WHEAT": 3,
+          "CARROT": 10
+        },
+        "recurrent_occupied_share": 0.4904928211098176
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 49918.0,
+          "net_cash_change": 46918.0,
+          "minimum_cash": 475.0,
+          "maximum_cash": 49918.0,
+          "positive_net_turn_cash": 51898.0,
+          "negative_net_turn_cash": 4980.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 3,
+            "CARROT": 4,
+            "TOMATO": 0,
+            "STRAWBERRY": 5,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 15462
+          },
+          "worker_states_on_locked_tiles": 184,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 25,
+          "peak_workers": 4
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3721.0,
+          "net_cash_change": 721.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3721.0,
+          "positive_net_turn_cash": 941.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 709
+          },
+          "worker_states_on_locked_tiles": 0,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "variant": "premium010"
+    },
+    {
+      "seed": 47,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "available": true,
+        "version": "0.1.2",
+        "frozen": true,
+        "archive": "dist\\submission-0.1.2.tar.gz",
+        "sha256": "07984f8d7d88bebd74391e1f603c42e94dabb43e81c22141c1de125a515d47a9"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "branch_bound",
+        "integer_node_limit": 64,
+        "market_method": "quadrature",
+        "enable_fertilizer": true,
+        "enable_contextual_bandit": false,
+        "enable_opponent_model": true,
+        "tactical_wheat_reserve": false,
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": false,
+        "enable_expansion": false,
+        "max_cows": 8,
+        "max_sheep": 4,
+        "max_geese": 0,
+        "max_expansions": 2,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 49419.0,
+      "opponent_money": 3712.0,
+      "margin": 45707.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.3281511817301035,
+        "p95_ms": 6.754400092177093,
+        "max_ms": 126.53649994172156
+      },
+      "wall_seconds": 3.867433200008236,
+      "operations_requested": {
+        "PASS": 428,
+        "PLANT": 75,
+        "WEST": 455,
+        "WATER": 670,
+        "NORTH": 434,
+        "SOUTH": 196,
+        "HARVEST": 90,
+        "EAST": 172,
+        "DROP": 27,
+        "DIG": 12
+      },
+      "market_orders_requested": {
+        "HIRE": 80,
+        "BUY_SEED": 46,
+        "SELL": 44
+      },
+      "market_units_requested": {
+        "BUY_SEED/WHEAT": 9,
+        "BUY_SEED/CARROT": 38,
+        "BUY_SEED/STRAWBERRY": 16,
+        "BUY_SEED/MELON": 25,
+        "SELL/CARROT": 79,
+        "SELL/WHEAT": 24,
+        "SELL/MELON": 150,
+        "SELL/STRAWBERRY": 64
+      },
+      "plant_requests": {
+        "STRAWBERRY": 16,
+        "WHEAT": 6,
+        "CARROT": 28,
+        "MELON": 25
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "STRAWBERRY": 16,
+          "WHEAT": 6,
+          "CARROT": 28,
+          "MELON": 25
+        },
+        "occupied_tile_states": {
+          "STRAWBERRY": 6264,
+          "WHEAT": 559,
+          "CARROT": 1949,
+          "MELON": 5902
+        },
+        "first_planted_day": {
+          "STRAWBERRY": 0,
+          "WHEAT": 0,
+          "CARROT": 0,
+          "MELON": 0
+        },
+        "peak_plots_by_crop": {
+          "STRAWBERRY": 16,
+          "WHEAT": 6,
+          "CARROT": 18,
+          "MELON": 13
+        },
+        "recurrent_occupied_share": 0.4268774703557312
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 49419.0,
+          "net_cash_change": 46419.0,
+          "minimum_cash": 974.0,
+          "maximum_cash": 49419.0,
+          "positive_net_turn_cash": 50795.0,
+          "negative_net_turn_cash": 4376.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 3,
+            "CARROT": 10,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 14674
+          },
+          "worker_states_on_locked_tiles": 186,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 25,
+          "peak_workers": 4
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3712.0,
+          "net_cash_change": 712.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3712.0,
+          "positive_net_turn_cash": 932.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "purchase_steps": [],
+          "productive_quadrants": [
+            "NW"
+          ],
+          "productive_tile_states_by_quadrant": {
+            "NW": 709
+          },
+          "worker_states_on_locked_tiles": 0,
+          "locked_tile_note": "Movement and shed access on locked tiles are legal; tile production needs ownership.",
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {}
+        },
+        "unit_action_audit": {
+          "available": false,
+          "reason": "disabled"
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "variant": "frozen012"
+    }
+  ]
+}

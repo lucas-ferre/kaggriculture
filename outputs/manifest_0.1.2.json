@@ -1,0 +1,92 @@
+{
+  "release": "0.1.2",
+  "submission": {
+    "path": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\dist\\submission.tar.gz",
+    "bytes": 51180,
+    "sha256": "07984f8d7d88bebd74391e1f603c42e94dabb43e81c22141c1de125a515d47a9",
+    "members": [
+      "main.py",
+      "kaggriculture_agent/__init__.py",
+      "kaggriculture_agent/agent.py",
+      "kaggriculture_agent/agronomy.py",
+      "kaggriculture_agent/domain.py",
+      "kaggriculture_agent/economy.py",
+      "kaggriculture_agent/intelligence.py",
+      "kaggriculture_agent/market.py",
+      "kaggriculture_agent/numerics.py",
+      "kaggriculture_agent/optimization.py",
+      "kaggriculture_agent/planner.py",
+      "kaggriculture_agent/quantile.py",
+      "kaggriculture_agent/quantile_coefficients.json",
+      "kaggriculture_agent/scheduler.py",
+      "LICENSE-APACHE-2.0.txt",
+      "THIRD_PARTY_NOTICE.txt"
+    ]
+  },
+  "versioned_archive": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\dist\\submission-0.1.2.tar.gz",
+  "source": {
+    "version": "0.1.2",
+    "source": "working_tree",
+    "frozen": false,
+    "runtime_sha256": {
+      "kaggriculture_agent/__init__.py": "77574c7983c3411649d85594af131a134ab51add403fe88a51f6be438809a170",
+      "kaggriculture_agent/agent.py": "459ecedb0d5fdc2fd45ce744d43a192950bddf6cf110e4e38008d52ad498400a",
+      "kaggriculture_agent/agronomy.py": "fab8ebbf61a15cdd463b9a3d62b4048fd3aa4ca4529983ed7d9665ff473f88ba",
+      "kaggriculture_agent/domain.py": "ab0282d94ebcdbe2020c776f5054cbe9421f5cdc96092dc5dff779989047d890",
+      "kaggriculture_agent/economy.py": "28b6e6d237f114cf79be019eb3b8f440d652e1dbca3938ac88c9614e909f00ec",
+      "kaggriculture_agent/intelligence.py": "6608c64c055a8105f05bca8eee84dd998f8b2533524dc8f85f948283f2df945b",
+      "kaggriculture_agent/market.py": "4e35593aed8f4f1429394c2cf80d050d49640cd12cf3fcec9ce081640cdba513",
+      "kaggriculture_agent/numerics.py": "033b8eb2ae71c9f1b6b55f5e03b8b3e1dc19fbbde56f277f9119694b670d6ffc",
+      "kaggriculture_agent/optimization.py": "9229917d5d9fe4be906cf1af65fa87c36755caf96bb7fbf618f9abe7750f0530",
+      "kaggriculture_agent/planner.py": "16d1b636d719390b0f84adb0949fda916555c3a87d9ec363c5efac7385a95700",
+      "kaggriculture_agent/quantile.py": "49b5546bf5e98cc5c1e9b132a12159cc3721aac03152238eb3af966c18488cc2",
+      "kaggriculture_agent/quantile_coefficients.json": "b1cfe721687d4ac9c51a202c4731fc10ed180e473d4d77467d803dbaa27b9429",
+      "kaggriculture_agent/scheduler.py": "18949649f65a96dc78c5756f7cdd45ca4227fb4b04742412a1238518aaefaf46"
+    },
+    "runtime_fingerprint_sha256": "82ff2615c94d70743734646335daa51e446b42df7e1090e5a2f2edec7028d4ba"
+  },
+  "engine": {
+    "framework_version": "1.32.7",
+    "engine_commit": "28b6d8af3ce73926b3d0fda1410c1ddd8384ab8c",
+    "engine_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
+    "framework_import_messages": "Loading environment halite failed: No module named 'numpy'\nLoading environment kore_fleets failed: No module named 'numpy'\nLoading environment lux_ai_s3 failed: No module named 'numpy'\nLoading environment open_spiel_env failed: No module named 'numpy'\nLoading environment reinforce_tactics failed: No module named 'numpy'",
+    "baseline_010": {
+      "available": true,
+      "version": "0.1.0",
+      "frozen": true,
+      "archive": "dist\\submission-0.1.0.tar.gz",
+      "sha256": "59dac04bfca77eaadffe87969ce2ad5d9e7fcbfd3fc4d58a403d7e4aa328102f"
+    },
+    "baseline_011": {
+      "available": true,
+      "version": "0.1.1",
+      "frozen": true,
+      "archive": "dist\\submission-0.1.1.tar.gz",
+      "sha256": "87f7a8f80cce1645fb948a5443a83af9bf1ab0ea45d572426c818a8b9eba7982"
+    },
+    "runtime": {
+      "version": "0.1.2",
+      "source": "working_tree",
+      "frozen": false,
+      "runtime_sha256": {
+        "kaggriculture_agent/__init__.py": "77574c7983c3411649d85594af131a134ab51add403fe88a51f6be438809a170",
+        "kaggriculture_agent/agent.py": "459ecedb0d5fdc2fd45ce744d43a192950bddf6cf110e4e38008d52ad498400a",
+        "kaggriculture_agent/agronomy.py": "fab8ebbf61a15cdd463b9a3d62b4048fd3aa4ca4529983ed7d9665ff473f88ba",
+        "kaggriculture_agent/domain.py": "ab0282d94ebcdbe2020c776f5054cbe9421f5cdc96092dc5dff779989047d890",
+        "kaggriculture_agent/economy.py": "28b6e6d237f114cf79be019eb3b8f440d652e1dbca3938ac88c9614e909f00ec",
+        "kaggriculture_agent/intelligence.py": "6608c64c055a8105f05bca8eee84dd998f8b2533524dc8f85f948283f2df945b",
+        "kaggriculture_agent/market.py": "4e35593aed8f4f1429394c2cf80d050d49640cd12cf3fcec9ce081640cdba513",
+        "kaggriculture_agent/numerics.py": "033b8eb2ae71c9f1b6b55f5e03b8b3e1dc19fbbde56f277f9119694b670d6ffc",
+        "kaggriculture_agent/optimization.py": "9229917d5d9fe4be906cf1af65fa87c36755caf96bb7fbf618f9abe7750f0530",
+        "kaggriculture_agent/planner.py": "16d1b636d719390b0f84adb0949fda916555c3a87d9ec363c5efac7385a95700",
+        "kaggriculture_agent/quantile.py": "49b5546bf5e98cc5c1e9b132a12159cc3721aac03152238eb3af966c18488cc2",
+        "kaggriculture_agent/quantile_coefficients.json": "b1cfe721687d4ac9c51a202c4731fc10ed180e473d4d77467d803dbaa27b9429",
+        "kaggriculture_agent/scheduler.py": "18949649f65a96dc78c5756f7cdd45ca4227fb4b04742412a1238518aaefaf46"
+      },
+      "runtime_fingerprint_sha256": "82ff2615c94d70743734646335daa51e446b42df7e1090e5a2f2edec7028d4ba"
+    }
+  },
+  "validation_report": "outputs/entrypoint_validation_0.1.2.json",
+  "test_report": "documentacao/relatorios/test-results_0.1.2.txt",
+  "upstream_check": "outputs/upstream_check_0.1.2.json"
+}

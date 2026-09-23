@@ -1,0 +1,10 @@
+This project uses game parameters and mechanics documented by Kaggle's
+kaggle-environments project, licensed under the Apache License, Version 2.0.
+
+Source: https://github.com/Kaggle/kaggle-environments
+Environment snapshot: 28b6d8af3ce73926b3d0fda1410c1ddd8384ab8c
+
+The unmodified reference engine and its license are in vendor/kaggriculture/.
+The submission contains independently implemented agent logic and parameter
+tables derived from that reference. The full Apache-2.0 text must accompany
+redistributed reference/derived material as LICENSE-APACHE-2.0.txt.

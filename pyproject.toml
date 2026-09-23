@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kaggriculture-agent"
+version = "0.1.3"
+description = "Adaptive crop portfolios, livestock and public-information market planning"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+simulation = ["kaggle-environments==1.32.7"]
+
+[tool.setuptools.packages.find]
+include = ["kaggriculture_agent*"]

@@ -1,0 +1,20 @@
+{
+  "runtime_source_sha256": {
+    "main.py": "0164aac2e60348832a42a5fe26903e86d686450692564586ff51402b9ba5379c",
+    "kaggriculture_agent/__init__.py": "3029e838d9132452a13cde9c10db8191290a228035bbab019533fec0b4c2e68d",
+    "kaggriculture_agent/agent.py": "1f223834515e8588ac8b5a92382714a178646155bcf2e8d644072fe4480a992c",
+    "kaggriculture_agent/domain.py": "d4e8c69b9f00b88b08d1a99ad8dad3508e17a9c95f984374d22ef66fb5475209",
+    "kaggriculture_agent/market.py": "00d2f02af481d14e1018b4f8c9474149ea5e08a165ba9b1866d24ee6409d5287",
+    "kaggriculture_agent/optimization.py": "502789b5703beba2271ba32f1fa22e7502e379d6bdcb8a0ad821c75218e86497",
+    "kaggriculture_agent/planner.py": "1bd9a628227af4091c7b51727e0fd0c41362fb73d657099b99eee2dad1cf706c",
+    "kaggriculture_agent/scheduler.py": "7481e56eda20c4e58992187ffa794e11f5daad72f078002f51f6fdaa8f59a49a"
+  },
+  "archive_sha256": "59dac04bfca77eaadffe87969ce2ad5d9e7fcbfd3fc4d58a403d7e4aa328102f",
+  "engine": {
+    "framework_version": "1.32.7",
+    "engine_commit": "28b6d8af3ce73926b3d0fda1410c1ddd8384ab8c",
+    "engine_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
+    "framework_import_messages": "Loading environment halite failed: No module named 'numpy'\nLoading environment kore_fleets failed: No module named 'numpy'\nLoading environment lux_ai_s3 failed: No module named 'numpy'\nLoading environment open_spiel_env failed: No module named 'numpy'\nLoading environment reinforce_tactics failed: No module named 'numpy'"
+  },
+  "tests": 50
+}

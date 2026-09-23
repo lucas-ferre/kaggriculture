@@ -1,0 +1,1746 @@
+{
+  "engine": {
+    "framework_version": "1.32.7",
+    "engine_commit": "28b6d8af3ce73926b3d0fda1410c1ddd8384ab8c",
+    "engine_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
+    "framework_import_messages": "Loading environment halite failed: No module named 'numpy'\nLoading environment kore_fleets failed: No module named 'numpy'\nLoading environment lux_ai_s3 failed: No module named 'numpy'\nLoading environment open_spiel_env failed: No module named 'numpy'\nLoading environment reinforce_tactics failed: No module named 'numpy'"
+  },
+  "steps": 720,
+  "train_seeds": [
+    101
+  ],
+  "validation_seeds": [
+    211
+  ],
+  "search_seed": 20260919,
+  "search_space": {
+    "fast_share": [
+      0.35,
+      0.5,
+      0.6,
+      0.7,
+      0.85
+    ],
+    "target_workers": [
+      3,
+      4,
+      6,
+      8
+    ],
+    "risk_aversion": [
+      0.0,
+      0.2,
+      0.35,
+      0.6,
+      1.0
+    ],
+    "max_plots": [
+      12,
+      16,
+      20,
+      24
+    ]
+  },
+  "objective": "Mean bank-money margin against fixed opponent, both sides; any error rejects candidate.",
+  "validation_baseline": {
+    "config": {
+      "fast_share": 0.6,
+      "risk_aversion": 0.35,
+      "target_workers": 6,
+      "max_plots": 20,
+      "cash_reserve": 300.0,
+      "scheduler": "greedy",
+      "optimizer": "enumerate",
+      "use_forecast": true,
+      "dual_cycle": true,
+      "long_mode": "recurrent",
+      "labor_cost_per_action": 0.6,
+      "labor_actions_per_plot_day": 2.2,
+      "labor_utilization": 0.65,
+      "logistics_margin": 12,
+      "allocation_slack": 0.15,
+      "ongoing_preference": 0.03,
+      "beam_width": 16
+    },
+    "score": 0.0,
+    "summary": {
+      "matches": 2,
+      "valid_matches": 2,
+      "outcomes": {
+        "loss": 1,
+        "win": 1
+      },
+      "win_rate": 0.5,
+      "mean_money": 24582.5,
+      "mean_margin": 0.0,
+      "max_decision_ms": 45.19829998025671
+    },
+    "matches": [
+      {
+        "seed": 211,
+        "side": 0,
+        "opponent": "selfplay",
+        "opponent_reproducible": true,
+        "policy": {
+          "fast_share": 0.6,
+          "risk_aversion": 0.35,
+          "target_workers": 6,
+          "max_plots": 20,
+          "cash_reserve": 300.0,
+          "scheduler": "greedy",
+          "optimizer": "enumerate",
+          "use_forecast": true,
+          "dual_cycle": true,
+          "long_mode": "recurrent",
+          "labor_cost_per_action": 0.6,
+          "labor_actions_per_plot_day": 2.2,
+          "labor_utilization": 0.65,
+          "logistics_margin": 12,
+          "allocation_slack": 0.15,
+          "ongoing_preference": 0.03,
+          "beam_width": 16
+        },
+        "valid": true,
+        "money": 24242.0,
+        "opponent_money": 24923.0,
+        "margin": -681.0,
+        "outcome": "loss",
+        "statuses": [
+          "DONE",
+          "DONE"
+        ],
+        "bad_statuses_seen": [],
+        "recorded_states": 720,
+        "last_observation_step": 719,
+        "decisions": {
+          "count": 719,
+          "mean_ms": 1.390957022416088,
+          "p95_ms": 7.127300021238625,
+          "max_ms": 43.96370000904426
+        },
+        "wall_seconds": 3.875197699991986,
+        "operations_requested": {
+          "PASS": 1912,
+          "PLANT": 83,
+          "WEST": 558,
+          "NORTH": 512,
+          "WATER": 613,
+          "HARVEST": 102,
+          "DROP": 51,
+          "EAST": 128,
+          "SOUTH": 142,
+          "DIG": 19
+        },
+        "plant_requests": {
+          "WHEAT": 64,
+          "STRAWBERRY": 19
+        },
+        "crop_mix": {
+          "successful_plantings": {
+            "WHEAT": 64,
+            "STRAWBERRY": 19
+          },
+          "occupied_tile_states": {
+            "WHEAT": 5864,
+            "STRAWBERRY": 7436
+          }
+        },
+        "errors": [],
+        "framework_stderr": [],
+        "run_error": null
+      },
+      {
+        "seed": 211,
+        "side": 1,
+        "opponent": "selfplay",
+        "opponent_reproducible": true,
+        "policy": {
+          "fast_share": 0.6,
+          "risk_aversion": 0.35,
+          "target_workers": 6,
+          "max_plots": 20,
+          "cash_reserve": 300.0,
+          "scheduler": "greedy",
+          "optimizer": "enumerate",
+          "use_forecast": true,
+          "dual_cycle": true,
+          "long_mode": "recurrent",
+          "labor_cost_per_action": 0.6,
+          "labor_actions_per_plot_day": 2.2,
+          "labor_utilization": 0.65,
+          "logistics_margin": 12,
+          "allocation_slack": 0.15,
+          "ongoing_preference": 0.03,
+          "beam_width": 16
+        },
+        "valid": true,
+        "money": 24923.0,
+        "opponent_money": 24242.0,
+        "margin": 681.0,
+        "outcome": "win",
+        "statuses": [
+          "DONE",
+          "DONE"
+        ],
+        "bad_statuses_seen": [],
+        "recorded_states": 720,
+        "last_observation_step": 719,
+        "decisions": {
+          "count": 719,
+          "mean_ms": 1.2557916548841417,
+          "p95_ms": 7.077799993567169,
+          "max_ms": 45.19829998025671
+        },
+        "wall_seconds": 4.063365500012878,
+        "operations_requested": {
+          "PASS": 1912,
+          "PLANT": 83,
+          "WEST": 569,
+          "NORTH": 504,
+          "WATER": 614,
+          "HARVEST": 102,
+          "DROP": 52,
+          "SOUTH": 138,
+          "EAST": 127,
+          "DIG": 19
+        },
+        "plant_requests": {
+          "WHEAT": 64,
+          "STRAWBERRY": 19
+        },
+        "crop_mix": {
+          "successful_plantings": {
+            "WHEAT": 64,
+            "STRAWBERRY": 19
+          },
+          "occupied_tile_states": {
+            "WHEAT": 5807,
+            "STRAWBERRY": 7436
+          }
+        },
+        "errors": [],
+        "framework_stderr": [],
+        "run_error": null
+      }
+    ]
+  },
+  "methods": {
+    "random": {
+      "selected_config": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 6,
+        "max_plots": 20,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "enumerate",
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "training_score": 0.0,
+      "training_trace": [
+        {
+          "config": {
+            "fast_share": 0.6,
+            "risk_aversion": 0.35,
+            "target_workers": 6,
+            "max_plots": 20,
+            "cash_reserve": 300.0,
+            "scheduler": "greedy",
+            "optimizer": "enumerate",
+            "use_forecast": true,
+            "dual_cycle": true,
+            "long_mode": "recurrent",
+            "labor_cost_per_action": 0.6,
+            "labor_actions_per_plot_day": 2.2,
+            "labor_utilization": 0.65,
+            "logistics_margin": 12,
+            "allocation_slack": 0.15,
+            "ongoing_preference": 0.03,
+            "beam_width": 16
+          },
+          "score": 0.0,
+          "summary": {
+            "matches": 2,
+            "valid_matches": 2,
+            "outcomes": {
+              "win": 1,
+              "loss": 1
+            },
+            "win_rate": 0.5,
+            "mean_money": 23242.0,
+            "mean_margin": 0.0,
+            "max_decision_ms": 44.707999972160906
+          },
+          "matches": [
+            {
+              "seed": 101,
+              "side": 0,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.6,
+                "risk_aversion": 0.35,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 23483.0,
+              "opponent_money": 23001.0,
+              "margin": 482.0,
+              "outcome": "win",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.3751091806493927,
+                "p95_ms": 7.31169997015968,
+                "max_ms": 44.707999972160906
+              },
+              "wall_seconds": 3.7899752999655902,
+              "operations_requested": {
+                "PASS": 1907,
+                "PLANT": 83,
+                "WEST": 571,
+                "NORTH": 496,
+                "WATER": 615,
+                "HARVEST": 102,
+                "DROP": 50,
+                "EAST": 135,
+                "SOUTH": 120,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5799,
+                  "STRAWBERRY": 7455
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            },
+            {
+              "seed": 101,
+              "side": 1,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.6,
+                "risk_aversion": 0.35,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 23001.0,
+              "opponent_money": 23483.0,
+              "margin": -482.0,
+              "outcome": "loss",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.1899607787614686,
+                "p95_ms": 7.066899968776852,
+                "max_ms": 43.09410002315417
+              },
+              "wall_seconds": 3.827012600027956,
+              "operations_requested": {
+                "PASS": 1933,
+                "PLANT": 83,
+                "WEST": 580,
+                "NORTH": 501,
+                "WATER": 614,
+                "HARVEST": 102,
+                "DROP": 48,
+                "SOUTH": 122,
+                "EAST": 118,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5805,
+                  "STRAWBERRY": 7439
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            }
+          ],
+          "trial": 0
+        },
+        {
+          "config": {
+            "fast_share": 0.35,
+            "risk_aversion": 0.2,
+            "target_workers": 6,
+            "max_plots": 20,
+            "cash_reserve": 300.0,
+            "scheduler": "greedy",
+            "optimizer": "enumerate",
+            "use_forecast": true,
+            "dual_cycle": true,
+            "long_mode": "recurrent",
+            "labor_cost_per_action": 0.6,
+            "labor_actions_per_plot_day": 2.2,
+            "labor_utilization": 0.65,
+            "logistics_margin": 12,
+            "allocation_slack": 0.15,
+            "ongoing_preference": 0.03,
+            "beam_width": 16
+          },
+          "score": -662.5,
+          "summary": {
+            "matches": 2,
+            "valid_matches": 2,
+            "outcomes": {
+              "loss": 2
+            },
+            "win_rate": 0.0,
+            "mean_money": 22896.5,
+            "mean_margin": -662.5,
+            "max_decision_ms": 44.7961000027135
+          },
+          "matches": [
+            {
+              "seed": 101,
+              "side": 0,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.35,
+                "risk_aversion": 0.2,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 22895.0,
+              "opponent_money": 23514.0,
+              "margin": -619.0,
+              "outcome": "loss",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.37650305959001,
+                "p95_ms": 7.224600005429238,
+                "max_ms": 44.21099997125566
+              },
+              "wall_seconds": 3.8168171999859624,
+              "operations_requested": {
+                "PASS": 1927,
+                "PLANT": 83,
+                "WEST": 576,
+                "NORTH": 501,
+                "WATER": 613,
+                "HARVEST": 102,
+                "DROP": 51,
+                "EAST": 123,
+                "SOUTH": 125,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5800,
+                  "STRAWBERRY": 7435
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            },
+            {
+              "seed": 101,
+              "side": 1,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.35,
+                "risk_aversion": 0.2,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 22898.0,
+              "opponent_money": 23604.0,
+              "margin": -706.0,
+              "outcome": "loss",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.1849484004220188,
+                "p95_ms": 7.105999975465238,
+                "max_ms": 44.7961000027135
+              },
+              "wall_seconds": 3.814210499986075,
+              "operations_requested": {
+                "PASS": 1913,
+                "PLANT": 83,
+                "WEST": 576,
+                "NORTH": 499,
+                "WATER": 614,
+                "HARVEST": 102,
+                "DROP": 52,
+                "EAST": 142,
+                "SOUTH": 120,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5852,
+                  "STRAWBERRY": 7429
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            }
+          ],
+          "trial": 1
+        },
+        {
+          "config": {
+            "fast_share": 0.7,
+            "risk_aversion": 0.0,
+            "target_workers": 6,
+            "max_plots": 12,
+            "cash_reserve": 300.0,
+            "scheduler": "greedy",
+            "optimizer": "enumerate",
+            "use_forecast": true,
+            "dual_cycle": true,
+            "long_mode": "recurrent",
+            "labor_cost_per_action": 0.6,
+            "labor_actions_per_plot_day": 2.2,
+            "labor_utilization": 0.65,
+            "logistics_margin": 12,
+            "allocation_slack": 0.15,
+            "ongoing_preference": 0.03,
+            "beam_width": 16
+          },
+          "score": -6923.0,
+          "summary": {
+            "matches": 2,
+            "valid_matches": 2,
+            "outcomes": {
+              "loss": 2
+            },
+            "win_rate": 0.0,
+            "mean_money": 18768.0,
+            "mean_margin": -6923.0,
+            "max_decision_ms": 44.38310000114143
+          },
+          "matches": [
+            {
+              "seed": 101,
+              "side": 0,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.7,
+                "risk_aversion": 0.0,
+                "target_workers": 6,
+                "max_plots": 12,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 18752.0,
+              "opponent_money": 25628.0,
+              "margin": -6876.0,
+              "outcome": "loss",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.2480808066246936,
+                "p95_ms": 7.31319998158142,
+                "max_ms": 31.287699996028095
+              },
+              "wall_seconds": 3.932314900041092,
+              "operations_requested": {
+                "PASS": 1420,
+                "PLANT": 62,
+                "WEST": 251,
+                "WATER": 384,
+                "NORTH": 308,
+                "HARVEST": 73,
+                "DROP": 50,
+                "EAST": 84,
+                "SOUTH": 99,
+                "DIG": 11
+              },
+              "plant_requests": {
+                "WHEAT": 11,
+                "STRAWBERRY": 11,
+                "CARROT": 40
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 11,
+                  "STRAWBERRY": 11,
+                  "CARROT": 40
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 1028,
+                  "STRAWBERRY": 4264,
+                  "CARROT": 2599
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            },
+            {
+              "seed": 101,
+              "side": 1,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.7,
+                "risk_aversion": 0.0,
+                "target_workers": 6,
+                "max_plots": 12,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 18784.0,
+              "opponent_money": 25754.0,
+              "margin": -6970.0,
+              "outcome": "loss",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.4410381082650041,
+                "p95_ms": 8.651199983432889,
+                "max_ms": 44.38310000114143
+              },
+              "wall_seconds": 4.581170600024052,
+              "operations_requested": {
+                "PASS": 1388,
+                "PLANT": 62,
+                "WEST": 256,
+                "WATER": 384,
+                "NORTH": 326,
+                "HARVEST": 73,
+                "DROP": 51,
+                "EAST": 85,
+                "SOUTH": 106,
+                "DIG": 11
+              },
+              "plant_requests": {
+                "WHEAT": 11,
+                "STRAWBERRY": 11,
+                "CARROT": 40
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 11,
+                  "STRAWBERRY": 11,
+                  "CARROT": 40
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 1036,
+                  "STRAWBERRY": 4268,
+                  "CARROT": 2618
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            }
+          ],
+          "trial": 2
+        }
+      ],
+      "training_match_budget": 6,
+      "validation": {
+        "config": {
+          "fast_share": 0.6,
+          "risk_aversion": 0.35,
+          "target_workers": 6,
+          "max_plots": 20,
+          "cash_reserve": 300.0,
+          "scheduler": "greedy",
+          "optimizer": "enumerate",
+          "use_forecast": true,
+          "dual_cycle": true,
+          "long_mode": "recurrent",
+          "labor_cost_per_action": 0.6,
+          "labor_actions_per_plot_day": 2.2,
+          "labor_utilization": 0.65,
+          "logistics_margin": 12,
+          "allocation_slack": 0.15,
+          "ongoing_preference": 0.03,
+          "beam_width": 16
+        },
+        "score": 0.0,
+        "summary": {
+          "matches": 2,
+          "valid_matches": 2,
+          "outcomes": {
+            "loss": 1,
+            "win": 1
+          },
+          "win_rate": 0.5,
+          "mean_money": 24582.5,
+          "mean_margin": 0.0,
+          "max_decision_ms": 64.11519995890558
+        },
+        "matches": [
+          {
+            "seed": 211,
+            "side": 0,
+            "opponent": "selfplay",
+            "opponent_reproducible": true,
+            "policy": {
+              "fast_share": 0.6,
+              "risk_aversion": 0.35,
+              "target_workers": 6,
+              "max_plots": 20,
+              "cash_reserve": 300.0,
+              "scheduler": "greedy",
+              "optimizer": "enumerate",
+              "use_forecast": true,
+              "dual_cycle": true,
+              "long_mode": "recurrent",
+              "labor_cost_per_action": 0.6,
+              "labor_actions_per_plot_day": 2.2,
+              "labor_utilization": 0.65,
+              "logistics_margin": 12,
+              "allocation_slack": 0.15,
+              "ongoing_preference": 0.03,
+              "beam_width": 16
+            },
+            "valid": true,
+            "money": 24242.0,
+            "opponent_money": 24923.0,
+            "margin": -681.0,
+            "outcome": "loss",
+            "statuses": [
+              "DONE",
+              "DONE"
+            ],
+            "bad_statuses_seen": [],
+            "recorded_states": 720,
+            "last_observation_step": 719,
+            "decisions": {
+              "count": 719,
+              "mean_ms": 1.7642070936305922,
+              "p95_ms": 9.162600035779178,
+              "max_ms": 64.11519995890558
+            },
+            "wall_seconds": 4.931875100010075,
+            "operations_requested": {
+              "PASS": 1912,
+              "PLANT": 83,
+              "WEST": 558,
+              "NORTH": 512,
+              "WATER": 613,
+              "HARVEST": 102,
+              "DROP": 51,
+              "EAST": 128,
+              "SOUTH": 142,
+              "DIG": 19
+            },
+            "plant_requests": {
+              "WHEAT": 64,
+              "STRAWBERRY": 19
+            },
+            "crop_mix": {
+              "successful_plantings": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "occupied_tile_states": {
+                "WHEAT": 5864,
+                "STRAWBERRY": 7436
+              }
+            },
+            "errors": [],
+            "framework_stderr": [],
+            "run_error": null
+          },
+          {
+            "seed": 211,
+            "side": 1,
+            "opponent": "selfplay",
+            "opponent_reproducible": true,
+            "policy": {
+              "fast_share": 0.6,
+              "risk_aversion": 0.35,
+              "target_workers": 6,
+              "max_plots": 20,
+              "cash_reserve": 300.0,
+              "scheduler": "greedy",
+              "optimizer": "enumerate",
+              "use_forecast": true,
+              "dual_cycle": true,
+              "long_mode": "recurrent",
+              "labor_cost_per_action": 0.6,
+              "labor_actions_per_plot_day": 2.2,
+              "labor_utilization": 0.65,
+              "logistics_margin": 12,
+              "allocation_slack": 0.15,
+              "ongoing_preference": 0.03,
+              "beam_width": 16
+            },
+            "valid": true,
+            "money": 24923.0,
+            "opponent_money": 24242.0,
+            "margin": 681.0,
+            "outcome": "win",
+            "statuses": [
+              "DONE",
+              "DONE"
+            ],
+            "bad_statuses_seen": [],
+            "recorded_states": 720,
+            "last_observation_step": 719,
+            "decisions": {
+              "count": 719,
+              "mean_ms": 1.5858230869977454,
+              "p95_ms": 8.800000010523945,
+              "max_ms": 58.66570002399385
+            },
+            "wall_seconds": 4.95841510000173,
+            "operations_requested": {
+              "PASS": 1912,
+              "PLANT": 83,
+              "WEST": 569,
+              "NORTH": 504,
+              "WATER": 614,
+              "HARVEST": 102,
+              "DROP": 52,
+              "SOUTH": 138,
+              "EAST": 127,
+              "DIG": 19
+            },
+            "plant_requests": {
+              "WHEAT": 64,
+              "STRAWBERRY": 19
+            },
+            "crop_mix": {
+              "successful_plantings": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "occupied_tile_states": {
+                "WHEAT": 5807,
+                "STRAWBERRY": 7436
+              }
+            },
+            "errors": [],
+            "framework_stderr": [],
+            "run_error": null
+          }
+        ]
+      }
+    },
+    "hill_climbing": {
+      "selected_config": {
+        "fast_share": 0.7,
+        "risk_aversion": 0.35,
+        "target_workers": 6,
+        "max_plots": 20,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "enumerate",
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "training_score": 4.0,
+      "training_trace": [
+        {
+          "config": {
+            "fast_share": 0.6,
+            "risk_aversion": 0.35,
+            "target_workers": 6,
+            "max_plots": 20,
+            "cash_reserve": 300.0,
+            "scheduler": "greedy",
+            "optimizer": "enumerate",
+            "use_forecast": true,
+            "dual_cycle": true,
+            "long_mode": "recurrent",
+            "labor_cost_per_action": 0.6,
+            "labor_actions_per_plot_day": 2.2,
+            "labor_utilization": 0.65,
+            "logistics_margin": 12,
+            "allocation_slack": 0.15,
+            "ongoing_preference": 0.03,
+            "beam_width": 16
+          },
+          "score": 0.0,
+          "summary": {
+            "matches": 2,
+            "valid_matches": 2,
+            "outcomes": {
+              "win": 1,
+              "loss": 1
+            },
+            "win_rate": 0.5,
+            "mean_money": 23242.0,
+            "mean_margin": 0.0,
+            "max_decision_ms": 59.17259998386726
+          },
+          "matches": [
+            {
+              "seed": 101,
+              "side": 0,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.6,
+                "risk_aversion": 0.35,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 23483.0,
+              "opponent_money": 23001.0,
+              "margin": 482.0,
+              "outcome": "win",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.7753877627316172,
+                "p95_ms": 8.915300015360117,
+                "max_ms": 59.17259998386726
+              },
+              "wall_seconds": 4.868829299986828,
+              "operations_requested": {
+                "PASS": 1907,
+                "PLANT": 83,
+                "WEST": 571,
+                "NORTH": 496,
+                "WATER": 615,
+                "HARVEST": 102,
+                "DROP": 50,
+                "EAST": 135,
+                "SOUTH": 120,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5799,
+                  "STRAWBERRY": 7455
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            },
+            {
+              "seed": 101,
+              "side": 1,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.6,
+                "risk_aversion": 0.35,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 23001.0,
+              "opponent_money": 23483.0,
+              "margin": -482.0,
+              "outcome": "loss",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.6138966614477626,
+                "p95_ms": 9.021700010634959,
+                "max_ms": 53.860300045926124
+              },
+              "wall_seconds": 5.0930003999965265,
+              "operations_requested": {
+                "PASS": 1933,
+                "PLANT": 83,
+                "WEST": 580,
+                "NORTH": 501,
+                "WATER": 614,
+                "HARVEST": 102,
+                "DROP": 48,
+                "SOUTH": 122,
+                "EAST": 118,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5805,
+                  "STRAWBERRY": 7439
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            }
+          ],
+          "trial": 0
+        },
+        {
+          "config": {
+            "fast_share": 0.7,
+            "risk_aversion": 0.35,
+            "target_workers": 6,
+            "max_plots": 20,
+            "cash_reserve": 300.0,
+            "scheduler": "greedy",
+            "optimizer": "enumerate",
+            "use_forecast": true,
+            "dual_cycle": true,
+            "long_mode": "recurrent",
+            "labor_cost_per_action": 0.6,
+            "labor_actions_per_plot_day": 2.2,
+            "labor_utilization": 0.65,
+            "logistics_margin": 12,
+            "allocation_slack": 0.15,
+            "ongoing_preference": 0.03,
+            "beam_width": 16
+          },
+          "score": 4.0,
+          "summary": {
+            "matches": 2,
+            "valid_matches": 2,
+            "outcomes": {
+              "loss": 1,
+              "win": 1
+            },
+            "win_rate": 0.5,
+            "mean_money": 23181.5,
+            "mean_margin": 4.0,
+            "max_decision_ms": 65.2179000317119
+          },
+          "matches": [
+            {
+              "seed": 101,
+              "side": 0,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.7,
+                "risk_aversion": 0.35,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 23093.0,
+              "opponent_money": 23396.0,
+              "margin": -303.0,
+              "outcome": "loss",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.7633009745683703,
+                "p95_ms": 9.226199996192008,
+                "max_ms": 60.74719998287037
+              },
+              "wall_seconds": 4.853798199968878,
+              "operations_requested": {
+                "PASS": 1907,
+                "PLANT": 83,
+                "WEST": 562,
+                "NORTH": 503,
+                "WATER": 614,
+                "HARVEST": 102,
+                "DROP": 57,
+                "EAST": 134,
+                "SOUTH": 139,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5842,
+                  "STRAWBERRY": 7424
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            },
+            {
+              "seed": 101,
+              "side": 1,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.7,
+                "risk_aversion": 0.35,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 23270.0,
+              "opponent_money": 22959.0,
+              "margin": 311.0,
+              "outcome": "win",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.6066065360565303,
+                "p95_ms": 8.749999979045242,
+                "max_ms": 65.2179000317119
+              },
+              "wall_seconds": 5.0432848000200465,
+              "operations_requested": {
+                "PASS": 1896,
+                "PLANT": 83,
+                "WEST": 578,
+                "NORTH": 501,
+                "WATER": 616,
+                "HARVEST": 102,
+                "DROP": 49,
+                "EAST": 129,
+                "SOUTH": 125,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5833,
+                  "STRAWBERRY": 7430
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            }
+          ],
+          "trial": 1
+        },
+        {
+          "config": {
+            "fast_share": 0.7,
+            "risk_aversion": 0.6,
+            "target_workers": 6,
+            "max_plots": 20,
+            "cash_reserve": 300.0,
+            "scheduler": "greedy",
+            "optimizer": "enumerate",
+            "use_forecast": true,
+            "dual_cycle": true,
+            "long_mode": "recurrent",
+            "labor_cost_per_action": 0.6,
+            "labor_actions_per_plot_day": 2.2,
+            "labor_utilization": 0.65,
+            "logistics_margin": 12,
+            "allocation_slack": 0.15,
+            "ongoing_preference": 0.03,
+            "beam_width": 16
+          },
+          "score": 4.0,
+          "summary": {
+            "matches": 2,
+            "valid_matches": 2,
+            "outcomes": {
+              "loss": 1,
+              "win": 1
+            },
+            "win_rate": 0.5,
+            "mean_money": 23181.5,
+            "mean_margin": 4.0,
+            "max_decision_ms": 52.956400031689554
+          },
+          "matches": [
+            {
+              "seed": 101,
+              "side": 0,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.7,
+                "risk_aversion": 0.6,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 23093.0,
+              "opponent_money": 23396.0,
+              "margin": -303.0,
+              "outcome": "loss",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.7350497909773643,
+                "p95_ms": 8.858999994117767,
+                "max_ms": 52.956400031689554
+              },
+              "wall_seconds": 4.815971000003628,
+              "operations_requested": {
+                "PASS": 1907,
+                "PLANT": 83,
+                "WEST": 562,
+                "NORTH": 503,
+                "WATER": 614,
+                "HARVEST": 102,
+                "DROP": 57,
+                "EAST": 134,
+                "SOUTH": 139,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5842,
+                  "STRAWBERRY": 7424
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            },
+            {
+              "seed": 101,
+              "side": 1,
+              "opponent": "selfplay",
+              "opponent_reproducible": true,
+              "policy": {
+                "fast_share": 0.7,
+                "risk_aversion": 0.6,
+                "target_workers": 6,
+                "max_plots": 20,
+                "cash_reserve": 300.0,
+                "scheduler": "greedy",
+                "optimizer": "enumerate",
+                "use_forecast": true,
+                "dual_cycle": true,
+                "long_mode": "recurrent",
+                "labor_cost_per_action": 0.6,
+                "labor_actions_per_plot_day": 2.2,
+                "labor_utilization": 0.65,
+                "logistics_margin": 12,
+                "allocation_slack": 0.15,
+                "ongoing_preference": 0.03,
+                "beam_width": 16
+              },
+              "valid": true,
+              "money": 23270.0,
+              "opponent_money": 22959.0,
+              "margin": 311.0,
+              "outcome": "win",
+              "statuses": [
+                "DONE",
+                "DONE"
+              ],
+              "bad_statuses_seen": [],
+              "recorded_states": 720,
+              "last_observation_step": 719,
+              "decisions": {
+                "count": 719,
+                "mean_ms": 1.488726008479433,
+                "p95_ms": 8.4021000075154,
+                "max_ms": 52.16879997169599
+              },
+              "wall_seconds": 4.783531200024299,
+              "operations_requested": {
+                "PASS": 1896,
+                "PLANT": 83,
+                "WEST": 578,
+                "NORTH": 501,
+                "WATER": 616,
+                "HARVEST": 102,
+                "DROP": 49,
+                "EAST": 129,
+                "SOUTH": 125,
+                "DIG": 19
+              },
+              "plant_requests": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "crop_mix": {
+                "successful_plantings": {
+                  "WHEAT": 64,
+                  "STRAWBERRY": 19
+                },
+                "occupied_tile_states": {
+                  "WHEAT": 5833,
+                  "STRAWBERRY": 7430
+                }
+              },
+              "errors": [],
+              "framework_stderr": [],
+              "run_error": null
+            }
+          ],
+          "trial": 2
+        }
+      ],
+      "training_match_budget": 6,
+      "validation": {
+        "config": {
+          "fast_share": 0.7,
+          "risk_aversion": 0.35,
+          "target_workers": 6,
+          "max_plots": 20,
+          "cash_reserve": 300.0,
+          "scheduler": "greedy",
+          "optimizer": "enumerate",
+          "use_forecast": true,
+          "dual_cycle": true,
+          "long_mode": "recurrent",
+          "labor_cost_per_action": 0.6,
+          "labor_actions_per_plot_day": 2.2,
+          "labor_utilization": 0.65,
+          "logistics_margin": 12,
+          "allocation_slack": 0.15,
+          "ongoing_preference": 0.03,
+          "beam_width": 16
+        },
+        "score": 170.0,
+        "summary": {
+          "matches": 2,
+          "valid_matches": 2,
+          "outcomes": {
+            "loss": 1,
+            "win": 1
+          },
+          "win_rate": 0.5,
+          "mean_money": 25180.0,
+          "mean_margin": 170.0,
+          "max_decision_ms": 73.94750003004447
+        },
+        "matches": [
+          {
+            "seed": 211,
+            "side": 0,
+            "opponent": "selfplay",
+            "opponent_reproducible": true,
+            "policy": {
+              "fast_share": 0.7,
+              "risk_aversion": 0.35,
+              "target_workers": 6,
+              "max_plots": 20,
+              "cash_reserve": 300.0,
+              "scheduler": "greedy",
+              "optimizer": "enumerate",
+              "use_forecast": true,
+              "dual_cycle": true,
+              "long_mode": "recurrent",
+              "labor_cost_per_action": 0.6,
+              "labor_actions_per_plot_day": 2.2,
+              "labor_utilization": 0.65,
+              "logistics_margin": 12,
+              "allocation_slack": 0.15,
+              "ongoing_preference": 0.03,
+              "beam_width": 16
+            },
+            "valid": true,
+            "money": 24869.0,
+            "opponent_money": 25397.0,
+            "margin": -528.0,
+            "outcome": "loss",
+            "statuses": [
+              "DONE",
+              "DONE"
+            ],
+            "bad_statuses_seen": [],
+            "recorded_states": 720,
+            "last_observation_step": 719,
+            "decisions": {
+              "count": 719,
+              "mean_ms": 1.773070235965289,
+              "p95_ms": 9.377999987918884,
+              "max_ms": 69.88540000747889
+            },
+            "wall_seconds": 5.001052600040566,
+            "operations_requested": {
+              "PASS": 1916,
+              "PLANT": 83,
+              "WEST": 561,
+              "NORTH": 500,
+              "WATER": 616,
+              "HARVEST": 102,
+              "DROP": 50,
+              "EAST": 126,
+              "SOUTH": 125,
+              "DIG": 19
+            },
+            "plant_requests": {
+              "WHEAT": 64,
+              "STRAWBERRY": 19
+            },
+            "crop_mix": {
+              "successful_plantings": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "occupied_tile_states": {
+                "WHEAT": 5842,
+                "STRAWBERRY": 7406
+              }
+            },
+            "errors": [],
+            "framework_stderr": [],
+            "run_error": null
+          },
+          {
+            "seed": 211,
+            "side": 1,
+            "opponent": "selfplay",
+            "opponent_reproducible": true,
+            "policy": {
+              "fast_share": 0.7,
+              "risk_aversion": 0.35,
+              "target_workers": 6,
+              "max_plots": 20,
+              "cash_reserve": 300.0,
+              "scheduler": "greedy",
+              "optimizer": "enumerate",
+              "use_forecast": true,
+              "dual_cycle": true,
+              "long_mode": "recurrent",
+              "labor_cost_per_action": 0.6,
+              "labor_actions_per_plot_day": 2.2,
+              "labor_utilization": 0.65,
+              "logistics_margin": 12,
+              "allocation_slack": 0.15,
+              "ongoing_preference": 0.03,
+              "beam_width": 16
+            },
+            "valid": true,
+            "money": 25491.0,
+            "opponent_money": 24623.0,
+            "margin": 868.0,
+            "outcome": "win",
+            "statuses": [
+              "DONE",
+              "DONE"
+            ],
+            "bad_statuses_seen": [],
+            "recorded_states": 720,
+            "last_observation_step": 719,
+            "decisions": {
+              "count": 719,
+              "mean_ms": 1.5065642572442,
+              "p95_ms": 8.701899962034076,
+              "max_ms": 73.94750003004447
+            },
+            "wall_seconds": 4.607470199989621,
+            "operations_requested": {
+              "PASS": 1878,
+              "PLANT": 83,
+              "WEST": 580,
+              "NORTH": 501,
+              "WATER": 615,
+              "HARVEST": 102,
+              "DROP": 51,
+              "EAST": 136,
+              "SOUTH": 133,
+              "DIG": 19
+            },
+            "plant_requests": {
+              "WHEAT": 64,
+              "STRAWBERRY": 19
+            },
+            "crop_mix": {
+              "successful_plantings": {
+                "WHEAT": 64,
+                "STRAWBERRY": 19
+              },
+              "occupied_tile_states": {
+                "WHEAT": 5836,
+                "STRAWBERRY": 7439
+              }
+            },
+            "errors": [],
+            "framework_stderr": [],
+            "run_error": null
+          }
+        ]
+      }
+    }
+  },
+  "note": "Small local experiment; validation is descriptive, not proof of competitive strength. No policy file is changed automatically."
+}

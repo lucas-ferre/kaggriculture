@@ -1,0 +1,2 @@
+# Local Kaggle CLI; not required by the submitted agent.
+kaggle==2.2.4

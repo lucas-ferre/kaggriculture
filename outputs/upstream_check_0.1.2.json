@@ -1,0 +1,24 @@
+{
+  "checked_at_utc": "2026-09-21T01:13:04.348882+00:00",
+  "scope": "Public GitHub master; not a claim about the private Kaggle runner version",
+  "files": [
+    {
+      "file": "kaggriculture.py",
+      "url": "https://raw.githubusercontent.com/Kaggle/kaggle-environments/master/kaggle_environments/envs/kaggriculture/kaggriculture.py",
+      "upstream_bytes": 40356,
+      "upstream_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
+      "local_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
+      "exact_match": true,
+      "normalized_text_match": true
+    },
+    {
+      "file": "kaggriculture.json",
+      "url": "https://raw.githubusercontent.com/Kaggle/kaggle-environments/master/kaggle_environments/envs/kaggriculture/kaggriculture.json",
+      "upstream_bytes": 6002,
+      "upstream_sha256": "a82c89c1a2315b93f39775d8e025471a01b738647c9772658368ee6b1b6f4867",
+      "local_sha256": "a82c89c1a2315b93f39775d8e025471a01b738647c9772658368ee6b1b6f4867",
+      "exact_match": true,
+      "normalized_text_match": true
+    }
+  ]
+}

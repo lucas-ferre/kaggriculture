@@ -1,0 +1,1373 @@
+{
+  "engine": {
+    "framework_version": "1.32.7",
+    "engine_commit": "28b6d8af3ce73926b3d0fda1410c1ddd8384ab8c",
+    "engine_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
+    "framework_import_messages": "Loading environment halite failed: No module named 'numpy'\nLoading environment kore_fleets failed: No module named 'numpy'\nLoading environment lux_ai_s3 failed: No module named 'numpy'\nLoading environment open_spiel_env failed: No module named 'numpy'\nLoading environment reinforce_tactics failed: No module named 'numpy'",
+    "baseline_010": {
+      "available": true,
+      "version": "0.1.0",
+      "frozen": true,
+      "archive": "dist\\submission-0.1.0.tar.gz",
+      "sha256": "59dac04bfca77eaadffe87969ce2ad5d9e7fcbfd3fc4d58a403d7e4aa328102f"
+    },
+    "baseline_011": {
+      "available": true,
+      "version": "0.1.1",
+      "frozen": true,
+      "archive": "dist\\submission-0.1.1.tar.gz",
+      "sha256": "87f7a8f80cce1645fb948a5443a83af9bf1ab0ea45d572426c818a8b9eba7982"
+    },
+    "runtime": {
+      "version": "0.1.1",
+      "source": "working_tree",
+      "frozen": false,
+      "runtime_sha256": {
+        "kaggriculture_agent/__init__.py": "687c1e63d26ee38a0197336364460bb467dfacb6398585f9a7cc719cc7695acd",
+        "kaggriculture_agent/agent.py": "d38010ec2be2b63648cc46d1e6d9fe35d3163e0cd2d7b827637160dba2181140",
+        "kaggriculture_agent/domain.py": "ab0282d94ebcdbe2020c776f5054cbe9421f5cdc96092dc5dff779989047d890",
+        "kaggriculture_agent/economy.py": "282be47d0705a2ea3a0caef3777fd5cff8177c2dbc6a3f67e4367c4ea58daf7a",
+        "kaggriculture_agent/market.py": "69e795fa9217e0436fc643c96ff0c59c80d1cf842d0a0309b123286bf43e75b5",
+        "kaggriculture_agent/numerics.py": "033b8eb2ae71c9f1b6b55f5e03b8b3e1dc19fbbde56f277f9119694b670d6ffc",
+        "kaggriculture_agent/optimization.py": "6cedd82d86afaa25be5c1daf02eb62c4c66d453d5e58ac7ade802ab10628a39c",
+        "kaggriculture_agent/planner.py": "5b103f8f28333eb2b3a79ea42aaf32b94a8235af0fa279ff3882e362846bc3ec",
+        "kaggriculture_agent/scheduler.py": "fdbc5a646be3d40b69aa35f8a704d2c12a3f0a06dad7791e3a2df1b108ae38ea"
+      },
+      "runtime_fingerprint_sha256": "84e38811e1c3693fdc917cffd8d4b0d0e96dcd62613e404ca958cee29dd68249"
+    }
+  },
+  "episode_steps": 720,
+  "seeds": [
+    211,
+    223
+  ],
+  "paired_sides": true,
+  "opponent_profiles": {
+    "starter": "Unmodified pinned engine starter agent."
+  },
+  "note": "Local baselines measure functionality and ablations; they do not estimate leaderboard strength.",
+  "legacy_note": "Legacy variants use 0.1.0 policy parameters with current runtime corrections; they are not the frozen 0.1.0 artifact.",
+  "ratings": {
+    "method": "Bradley-Terry with Gaussian L2 prior; draws = half a win",
+    "regularization": 1.0,
+    "played_matches": 4,
+    "excluded_matches": 0,
+    "converged": true,
+    "iterations": 5,
+    "connected_components": [
+      [
+        "opponent:starter",
+        "variant:baseline_011"
+      ]
+    ],
+    "ratings": [
+      {
+        "player": "variant:baseline_011",
+        "rating": 1628.6856924967992,
+        "log_ability": 0.7407743930618642,
+        "approx_prior_conditioned_sd": 148.07175922079907,
+        "matches": 4,
+        "points": 4.0,
+        "draws": 0,
+        "distinct_opponents": 1
+      },
+      {
+        "player": "opponent:starter",
+        "rating": 1371.3143075032008,
+        "log_ability": -0.7407743930618642,
+        "approx_prior_conditioned_sd": 148.07175922079907,
+        "matches": 4,
+        "points": 0.0,
+        "draws": 0,
+        "distinct_opponents": 1
+      }
+    ],
+    "caveat": "Descriptive local ratings from these opponents and seeds only. Small samples, shared seeds and reused policy families limit independence and generalization. Uncertainty is a prior-conditioned Laplace approximation, not a confidence interval. Disconnected components cannot be ranked against each other from game evidence. These are not official Kaggle ratings or leaderboard estimates."
+  },
+  "summary": {
+    "baseline_011/starter": {
+      "matches": 4,
+      "valid_matches": 4,
+      "outcomes": {
+        "win": 4
+      },
+      "win_rate": 1.0,
+      "score_rate": 1.0,
+      "mean_money": 111793.75,
+      "mean_margin": 108195.5,
+      "median_money": 114413.5,
+      "min_money": 86707.0,
+      "max_decision_ms": 98.28370000468567,
+      "mean_wall_seconds": 6.022828524990473,
+      "action_audit_available_matches": 4,
+      "non_pass_noop_count": 0,
+      "note": "Descriptive paired-seed sample; invalid episodes excluded from financial and outcome averages."
+    }
+  },
+  "matches": [
+    {
+      "seed": 211,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "available": true,
+        "version": "0.1.1",
+        "frozen": true,
+        "archive": "dist\\submission-0.1.1.tar.gz",
+        "sha256": "87f7a8f80cce1645fb948a5443a83af9bf1ab0ea45d572426c818a8b9eba7982"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "simplex",
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": true,
+        "enable_expansion": true,
+        "max_cows": 8,
+        "max_sheep": 4,
+        "max_geese": 0,
+        "max_expansions": 2,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 126297.0,
+      "opponent_money": 3508.0,
+      "margin": 122789.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 5.841817524509507,
+        "p95_ms": 45.53699999814853,
+        "max_ms": 98.28370000468567
+      },
+      "wall_seconds": 6.145206600020174,
+      "operations_requested": {
+        "PASS": 769,
+        "PICKUP": 186,
+        "WEST": 630,
+        "BUILD_PASTURE": 12,
+        "NORTH": 871,
+        "PLACE": 58,
+        "FEED": 280,
+        "SOUTH": 489,
+        "CARE": 280,
+        "PLANT": 69,
+        "WATER": 621,
+        "COLLECT_FERTILIZER": 282,
+        "EAST": 560,
+        "DROP": 129,
+        "HARVEST": 177,
+        "DIG": 14
+      },
+      "market_orders_requested": {
+        "HIRE": 205,
+        "BUY_ANIMAL": 9,
+        "BUY_SEED": 32,
+        "BUY_PRODUCT": 45,
+        "SELL": 246,
+        "BUY_LAND": 1
+      },
+      "market_units_requested": {
+        "BUY_ANIMAL/COW": 8,
+        "BUY_ANIMAL/SHEEP": 4,
+        "BUY_SEED/WHEAT": 28,
+        "BUY_SEED/MELON": 21,
+        "BUY_PRODUCT/WHEAT": 254,
+        "SELL/FERTILIZER": 282,
+        "SELL/WHEAT": 76,
+        "SELL/WOOL": 99,
+        "BUY_SEED/CARROT": 6,
+        "BUY_SEED/STRAWBERRY": 16,
+        "SELL/MILK": 234,
+        "SELL/CARROT": 17,
+        "SELL/MELON": 118,
+        "SELL/STRAWBERRY": 62
+      },
+      "plant_requests": {
+        "MELON": 20,
+        "WHEAT": 27,
+        "CARROT": 6,
+        "STRAWBERRY": 16
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "WHEAT": 27,
+          "MELON": 20,
+          "CARROT": 6,
+          "STRAWBERRY": 16
+        },
+        "occupied_tile_states": {
+          "WHEAT": 2467,
+          "MELON": 4796,
+          "CARROT": 411,
+          "STRAWBERRY": 6095
+        }
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 126297.0,
+          "net_cash_change": 123297.0,
+          "minimum_cash": 300.0,
+          "maximum_cash": 126297.0,
+          "positive_net_turn_cash": 142770.0,
+          "negative_net_turn_cash": 19473.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 1,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 1
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 2,
+          "purchased_quadrants": 1,
+          "peak_crop_plots": 29,
+          "peak_workers": 8
+        },
+        "livestock": {
+          "final_animals": {
+            "SHEEP": 4,
+            "COW": 8
+          },
+          "peak_animals": {
+            "COW": 8,
+            "SHEEP": 4
+          },
+          "occupied_tile_states": {
+            "COW": 4767,
+            "SHEEP": 2154
+          },
+          "animals_placed": {
+            "COW": 8,
+            "SHEEP": 4
+          },
+          "animals_lost": {
+            "COW": 0,
+            "SHEEP": 0
+          }
+        },
+        "unit_action_audit": {
+          "available": true,
+          "method": "Copied pre-turn state + pinned engine physical-action replay",
+          "changed_actions": {
+            "PICKUP": 186,
+            "WEST": 630,
+            "BUILD_PASTURE": 12,
+            "NORTH": 871,
+            "PLACE": 58,
+            "FEED": 280,
+            "SOUTH": 489,
+            "CARE": 280,
+            "PLANT": 69,
+            "WATER": 621,
+            "COLLECT_FERTILIZER": 282,
+            "EAST": 560,
+            "DROP": 129,
+            "HARVEST": 177,
+            "DIG": 14
+          },
+          "non_pass_noops": {},
+          "non_pass_noop_count": 0,
+          "atomic_blocked_plant_requests": {},
+          "audit_errors": [],
+          "note": "No-ops are reconstructed ineffective actions, not framework errors. Market no-ops are not measured."
+        },
+        "production": {
+          "harvested_units": {
+            "WHEAT": 102,
+            "WOOL": 99,
+            "MILK": 234,
+            "CARROT": 17,
+            "MELON": 118,
+            "STRAWBERRY": 62
+          },
+          "fertilizer_collected": 282,
+          "successful_plant_actions": 69
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3508.0,
+          "net_cash_change": 508.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3508.0,
+          "positive_net_turn_cash": 728.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {},
+          "animals_placed": {},
+          "animals_lost": {}
+        },
+        "unit_action_audit": {
+          "available": true,
+          "method": "Copied pre-turn state + pinned engine physical-action replay",
+          "changed_actions": {
+            "PLANT": 10,
+            "WATER": 30,
+            "HARVEST": 9
+          },
+          "non_pass_noops": {},
+          "non_pass_noop_count": 0,
+          "atomic_blocked_plant_requests": {},
+          "audit_errors": [],
+          "note": "No-ops are reconstructed ineffective actions, not framework errors. Market no-ops are not measured."
+        },
+        "production": {
+          "harvested_units": {
+            "CARROT": 18
+          },
+          "fertilizer_collected": 0,
+          "successful_plant_actions": 10
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "replay": "tmp\\quantile_validation\\baseline_011_starter_211_0.json",
+      "variant": "baseline_011"
+    },
+    {
+      "seed": 211,
+      "side": 1,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "available": true,
+        "version": "0.1.1",
+        "frozen": true,
+        "archive": "dist\\submission-0.1.1.tar.gz",
+        "sha256": "87f7a8f80cce1645fb948a5443a83af9bf1ab0ea45d572426c818a8b9eba7982"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "simplex",
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": true,
+        "enable_expansion": true,
+        "max_cows": 8,
+        "max_sheep": 4,
+        "max_geese": 0,
+        "max_expansions": 2,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 131641.0,
+      "opponent_money": 3480.0,
+      "margin": 128161.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 5.591535465956973,
+        "p95_ms": 44.799999974202365,
+        "max_ms": 91.41250001266599
+      },
+      "wall_seconds": 5.91879239998525,
+      "operations_requested": {
+        "PASS": 772,
+        "PICKUP": 188,
+        "WEST": 641,
+        "BUILD_PASTURE": 12,
+        "NORTH": 873,
+        "PLACE": 60,
+        "FEED": 280,
+        "SOUTH": 505,
+        "CARE": 280,
+        "PLANT": 64,
+        "WATER": 606,
+        "COLLECT_FERTILIZER": 281,
+        "EAST": 557,
+        "DROP": 125,
+        "HARVEST": 173,
+        "DIG": 9
+      },
+      "market_orders_requested": {
+        "HIRE": 205,
+        "BUY_ANIMAL": 10,
+        "BUY_SEED": 30,
+        "BUY_PRODUCT": 46,
+        "SELL": 247,
+        "BUY_LAND": 1
+      },
+      "market_units_requested": {
+        "BUY_ANIMAL/COW": 8,
+        "BUY_ANIMAL/SHEEP": 4,
+        "BUY_SEED/WHEAT": 23,
+        "BUY_SEED/MELON": 22,
+        "BUY_PRODUCT/WHEAT": 258,
+        "SELL/FERTILIZER": 281,
+        "SELL/WHEAT": 64,
+        "SELL/WOOL": 99,
+        "BUY_SEED/CARROT": 7,
+        "BUY_SEED/STRAWBERRY": 17,
+        "SELL/MILK": 234,
+        "SELL/CARROT": 18,
+        "SELL/MELON": 113,
+        "SELL/STRAWBERRY": 66
+      },
+      "plant_requests": {
+        "MELON": 19,
+        "WHEAT": 22,
+        "CARROT": 6,
+        "STRAWBERRY": 17
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "WHEAT": 22,
+          "MELON": 19,
+          "CARROT": 6,
+          "STRAWBERRY": 17
+        },
+        "occupied_tile_states": {
+          "WHEAT": 2022,
+          "MELON": 4574,
+          "CARROT": 411,
+          "STRAWBERRY": 6475
+        }
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 131641.0,
+          "net_cash_change": 128641.0,
+          "minimum_cash": 305.0,
+          "maximum_cash": 131641.0,
+          "positive_net_turn_cash": 148207.0,
+          "negative_net_turn_cash": 19566.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 1,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 3
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 2,
+          "purchased_quadrants": 1,
+          "peak_crop_plots": 29,
+          "peak_workers": 8
+        },
+        "livestock": {
+          "final_animals": {
+            "SHEEP": 4,
+            "COW": 8
+          },
+          "peak_animals": {
+            "COW": 8,
+            "SHEEP": 4
+          },
+          "occupied_tile_states": {
+            "COW": 4768,
+            "SHEEP": 2154
+          },
+          "animals_placed": {
+            "COW": 8,
+            "SHEEP": 4
+          },
+          "animals_lost": {
+            "COW": 0,
+            "SHEEP": 0
+          }
+        },
+        "unit_action_audit": {
+          "available": true,
+          "method": "Copied pre-turn state + pinned engine physical-action replay",
+          "changed_actions": {
+            "PICKUP": 188,
+            "WEST": 641,
+            "BUILD_PASTURE": 12,
+            "NORTH": 873,
+            "PLACE": 60,
+            "FEED": 280,
+            "SOUTH": 505,
+            "CARE": 280,
+            "PLANT": 64,
+            "WATER": 606,
+            "COLLECT_FERTILIZER": 281,
+            "EAST": 557,
+            "DROP": 125,
+            "HARVEST": 173,
+            "DIG": 9
+          },
+          "non_pass_noops": {},
+          "non_pass_noop_count": 0,
+          "atomic_blocked_plant_requests": {},
+          "audit_errors": [],
+          "note": "No-ops are reconstructed ineffective actions, not framework errors. Market no-ops are not measured."
+        },
+        "production": {
+          "harvested_units": {
+            "WHEAT": 86,
+            "WOOL": 99,
+            "MILK": 234,
+            "CARROT": 18,
+            "MELON": 113,
+            "STRAWBERRY": 66
+          },
+          "fertilizer_collected": 281,
+          "successful_plant_actions": 64
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3480.0,
+          "net_cash_change": 480.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3480.0,
+          "positive_net_turn_cash": 700.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {},
+          "animals_placed": {},
+          "animals_lost": {}
+        },
+        "unit_action_audit": {
+          "available": true,
+          "method": "Copied pre-turn state + pinned engine physical-action replay",
+          "changed_actions": {
+            "PLANT": 10,
+            "WATER": 30,
+            "HARVEST": 9
+          },
+          "non_pass_noops": {},
+          "non_pass_noop_count": 0,
+          "atomic_blocked_plant_requests": {},
+          "audit_errors": [],
+          "note": "No-ops are reconstructed ineffective actions, not framework errors. Market no-ops are not measured."
+        },
+        "production": {
+          "harvested_units": {
+            "CARROT": 18
+          },
+          "fertilizer_collected": 0,
+          "successful_plant_actions": 10
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "replay": "tmp\\quantile_validation\\baseline_011_starter_211_1.json",
+      "variant": "baseline_011"
+    },
+    {
+      "seed": 223,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "available": true,
+        "version": "0.1.1",
+        "frozen": true,
+        "archive": "dist\\submission-0.1.1.tar.gz",
+        "sha256": "87f7a8f80cce1645fb948a5443a83af9bf1ab0ea45d572426c818a8b9eba7982"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "simplex",
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": true,
+        "enable_expansion": true,
+        "max_cows": 8,
+        "max_sheep": 4,
+        "max_geese": 0,
+        "max_expansions": 2,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 102530.0,
+      "opponent_money": 3617.0,
+      "margin": 98913.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 5.795981363158269,
+        "p95_ms": 42.244100011885166,
+        "max_ms": 90.13729996513575
+      },
+      "wall_seconds": 6.038015300000552,
+      "operations_requested": {
+        "PASS": 747,
+        "PICKUP": 187,
+        "WEST": 679,
+        "BUILD_PASTURE": 12,
+        "NORTH": 853,
+        "PLACE": 58,
+        "FEED": 275,
+        "SOUTH": 487,
+        "CARE": 275,
+        "PLANT": 69,
+        "WATER": 609,
+        "COLLECT_FERTILIZER": 279,
+        "EAST": 586,
+        "DROP": 123,
+        "HARVEST": 175,
+        "DIG": 7
+      },
+      "market_orders_requested": {
+        "HIRE": 205,
+        "BUY_ANIMAL": 10,
+        "BUY_SEED": 39,
+        "BUY_PRODUCT": 46,
+        "SELL": 222,
+        "BUY_LAND": 1
+      },
+      "market_units_requested": {
+        "BUY_ANIMAL/COW": 8,
+        "BUY_ANIMAL/SHEEP": 4,
+        "BUY_SEED/WHEAT": 25,
+        "BUY_SEED/MELON": 22,
+        "BUY_PRODUCT/WHEAT": 261,
+        "SELL/FERTILIZER": 279,
+        "SELL/WHEAT": 60,
+        "SELL/WOOL": 103,
+        "BUY_SEED/CARROT": 13,
+        "BUY_SEED/TOMATO": 5,
+        "BUY_SEED/STRAWBERRY": 16,
+        "SELL/MILK": 225,
+        "SELL/CARROT": 35,
+        "SELL/MELON": 118,
+        "SELL/TOMATO": 4,
+        "SELL/STRAWBERRY": 60
+      },
+      "plant_requests": {
+        "MELON": 20,
+        "WHEAT": 20,
+        "TOMATO": 1,
+        "STRAWBERRY": 15,
+        "CARROT": 13
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "WHEAT": 20,
+          "MELON": 20,
+          "STRAWBERRY": 15,
+          "TOMATO": 1,
+          "CARROT": 13
+        },
+        "occupied_tile_states": {
+          "WHEAT": 1863,
+          "MELON": 4915,
+          "STRAWBERRY": 5818,
+          "TOMATO": 268,
+          "CARROT": 894
+        }
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 102530.0,
+          "net_cash_change": 99530.0,
+          "minimum_cash": 310.0,
+          "maximum_cash": 102530.0,
+          "positive_net_turn_cash": 119995.0,
+          "negative_net_turn_cash": 20465.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 5,
+            "CARROT": 0,
+            "TOMATO": 4,
+            "STRAWBERRY": 1,
+            "MELON": 2
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 2,
+          "purchased_quadrants": 1,
+          "peak_crop_plots": 32,
+          "peak_workers": 8
+        },
+        "livestock": {
+          "final_animals": {
+            "SHEEP": 4,
+            "COW": 8
+          },
+          "peak_animals": {
+            "COW": 8,
+            "SHEEP": 4
+          },
+          "occupied_tile_states": {
+            "COW": 4614,
+            "SHEEP": 2204
+          },
+          "animals_placed": {
+            "COW": 8,
+            "SHEEP": 4
+          },
+          "animals_lost": {
+            "COW": 0,
+            "SHEEP": 0
+          }
+        },
+        "unit_action_audit": {
+          "available": true,
+          "method": "Copied pre-turn state + pinned engine physical-action replay",
+          "changed_actions": {
+            "PICKUP": 187,
+            "WEST": 679,
+            "BUILD_PASTURE": 12,
+            "NORTH": 853,
+            "PLACE": 58,
+            "FEED": 275,
+            "SOUTH": 487,
+            "CARE": 275,
+            "PLANT": 69,
+            "WATER": 609,
+            "COLLECT_FERTILIZER": 279,
+            "EAST": 586,
+            "DROP": 123,
+            "HARVEST": 175,
+            "DIG": 7
+          },
+          "non_pass_noops": {},
+          "non_pass_noop_count": 0,
+          "atomic_blocked_plant_requests": {},
+          "audit_errors": [],
+          "note": "No-ops are reconstructed ineffective actions, not framework errors. Market no-ops are not measured."
+        },
+        "production": {
+          "harvested_units": {
+            "WHEAT": 74,
+            "WOOL": 103,
+            "MILK": 225,
+            "CARROT": 35,
+            "MELON": 118,
+            "TOMATO": 4,
+            "STRAWBERRY": 60
+          },
+          "fertilizer_collected": 279,
+          "successful_plant_actions": 69
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3617.0,
+          "net_cash_change": 617.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3617.0,
+          "positive_net_turn_cash": 837.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {},
+          "animals_placed": {},
+          "animals_lost": {}
+        },
+        "unit_action_audit": {
+          "available": true,
+          "method": "Copied pre-turn state + pinned engine physical-action replay",
+          "changed_actions": {
+            "PLANT": 10,
+            "WATER": 30,
+            "HARVEST": 9
+          },
+          "non_pass_noops": {},
+          "non_pass_noop_count": 0,
+          "atomic_blocked_plant_requests": {},
+          "audit_errors": [],
+          "note": "No-ops are reconstructed ineffective actions, not framework errors. Market no-ops are not measured."
+        },
+        "production": {
+          "harvested_units": {
+            "CARROT": 18
+          },
+          "fertilizer_collected": 0,
+          "successful_plant_actions": 10
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "replay": "tmp\\quantile_validation\\baseline_011_starter_223_0.json",
+      "variant": "baseline_011"
+    },
+    {
+      "seed": 223,
+      "side": 1,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "opponent_description": "Unmodified pinned engine starter agent.",
+      "opponent_policy": null,
+      "policy_source": {
+        "available": true,
+        "version": "0.1.1",
+        "frozen": true,
+        "archive": "dist\\submission-0.1.1.tar.gz",
+        "sha256": "87f7a8f80cce1645fb948a5443a83af9bf1ab0ea45d572426c818a8b9eba7982"
+      },
+      "opponent_source": {
+        "frozen": true,
+        "source": "pinned_engine"
+      },
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 8,
+        "max_plots": 40,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "simplex",
+        "strategy": "adaptive",
+        "risk_quantile": 0.25,
+        "enable_livestock": true,
+        "enable_expansion": true,
+        "max_cows": 8,
+        "max_sheep": 4,
+        "max_geese": 0,
+        "max_expansions": 2,
+        "use_forecast": true,
+        "dual_cycle": true,
+        "long_mode": "recurrent",
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 86707.0,
+      "opponent_money": 3788.0,
+      "margin": 82919.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 5.717252433524753,
+        "p95_ms": 41.792400006670505,
+        "max_ms": 87.04620000207797
+      },
+      "wall_seconds": 5.989299799955916,
+      "operations_requested": {
+        "PASS": 756,
+        "PICKUP": 180,
+        "WEST": 682,
+        "BUILD_PASTURE": 12,
+        "NORTH": 869,
+        "PLACE": 58,
+        "FEED": 274,
+        "SOUTH": 458,
+        "CARE": 274,
+        "PLANT": 74,
+        "WATER": 631,
+        "COLLECT_FERTILIZER": 281,
+        "EAST": 562,
+        "DROP": 113,
+        "HARVEST": 185,
+        "DIG": 13
+      },
+      "market_orders_requested": {
+        "HIRE": 205,
+        "BUY_ANIMAL": 9,
+        "BUY_SEED": 36,
+        "BUY_PRODUCT": 48,
+        "SELL": 213,
+        "BUY_LAND": 1
+      },
+      "market_units_requested": {
+        "BUY_ANIMAL/COW": 8,
+        "BUY_ANIMAL/SHEEP": 4,
+        "BUY_SEED/WHEAT": 18,
+        "BUY_SEED/MELON": 21,
+        "BUY_PRODUCT/WHEAT": 276,
+        "SELL/FERTILIZER": 281,
+        "SELL/WHEAT": 56,
+        "SELL/WOOL": 106,
+        "BUY_SEED/CARROT": 23,
+        "BUY_SEED/TOMATO": 10,
+        "SELL/MILK": 228,
+        "BUY_SEED/STRAWBERRY": 12,
+        "SELL/CARROT": 63,
+        "SELL/MELON": 115,
+        "SELL/TOMATO": 28,
+        "SELL/STRAWBERRY": 46
+      },
+      "plant_requests": {
+        "MELON": 20,
+        "WHEAT": 14,
+        "CARROT": 21,
+        "TOMATO": 7,
+        "STRAWBERRY": 12
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "WHEAT": 14,
+          "MELON": 20,
+          "CARROT": 21,
+          "TOMATO": 7,
+          "STRAWBERRY": 12
+        },
+        "occupied_tile_states": {
+          "WHEAT": 1359,
+          "MELON": 4844,
+          "CARROT": 1374,
+          "TOMATO": 1892,
+          "STRAWBERRY": 4663
+        }
+      },
+      "metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 86707.0,
+          "net_cash_change": 83707.0,
+          "minimum_cash": 300.0,
+          "maximum_cash": 86707.0,
+          "positive_net_turn_cash": 104063.0,
+          "negative_net_turn_cash": 20356.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 4,
+            "CARROT": 2,
+            "TOMATO": 3,
+            "STRAWBERRY": 0,
+            "MELON": 1
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 2,
+          "purchased_quadrants": 1,
+          "peak_crop_plots": 34,
+          "peak_workers": 8
+        },
+        "livestock": {
+          "final_animals": {
+            "SHEEP": 4,
+            "COW": 8
+          },
+          "peak_animals": {
+            "COW": 8,
+            "SHEEP": 4
+          },
+          "occupied_tile_states": {
+            "COW": 4613,
+            "SHEEP": 2221
+          },
+          "animals_placed": {
+            "COW": 8,
+            "SHEEP": 4
+          },
+          "animals_lost": {
+            "COW": 0,
+            "SHEEP": 0
+          }
+        },
+        "unit_action_audit": {
+          "available": true,
+          "method": "Copied pre-turn state + pinned engine physical-action replay",
+          "changed_actions": {
+            "PICKUP": 180,
+            "WEST": 682,
+            "BUILD_PASTURE": 12,
+            "NORTH": 869,
+            "PLACE": 58,
+            "FEED": 274,
+            "SOUTH": 458,
+            "CARE": 274,
+            "PLANT": 74,
+            "WATER": 631,
+            "COLLECT_FERTILIZER": 281,
+            "EAST": 562,
+            "DROP": 113,
+            "HARVEST": 185,
+            "DIG": 13
+          },
+          "non_pass_noops": {},
+          "non_pass_noop_count": 0,
+          "atomic_blocked_plant_requests": {},
+          "audit_errors": [],
+          "note": "No-ops are reconstructed ineffective actions, not framework errors. Market no-ops are not measured."
+        },
+        "production": {
+          "harvested_units": {
+            "WHEAT": 54,
+            "WOOL": 106,
+            "MILK": 228,
+            "CARROT": 63,
+            "MELON": 119,
+            "TOMATO": 28,
+            "STRAWBERRY": 46
+          },
+          "fertilizer_collected": 281,
+          "successful_plant_actions": 74
+        }
+      },
+      "opponent_metrics": {
+        "available": true,
+        "economy": {
+          "initial_cash": 3000.0,
+          "final_cash": 3788.0,
+          "net_cash_change": 788.0,
+          "minimum_cash": 2940.0,
+          "maximum_cash": 3788.0,
+          "positive_net_turn_cash": 1008.0,
+          "negative_net_turn_cash": 220.0,
+          "cash_flow_note": "Net turn cash changes combine sales and spending; these are not gross revenues/costs.",
+          "final_shed": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0,
+            "EGG": 0,
+            "MILK": 0,
+            "WOOL": 0,
+            "FERTILIZER": 0,
+            "GOOSE": 0,
+            "COW": 0,
+            "SHEEP": 0
+          },
+          "final_seeds": {
+            "WHEAT": 0,
+            "CARROT": 1,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "final_carried_units": {}
+        },
+        "land": {
+          "initial_quadrants": 1,
+          "final_quadrants": 1,
+          "purchased_quadrants": 0,
+          "peak_crop_plots": 1,
+          "peak_workers": 1
+        },
+        "livestock": {
+          "final_animals": {},
+          "peak_animals": {},
+          "occupied_tile_states": {},
+          "animals_placed": {},
+          "animals_lost": {}
+        },
+        "unit_action_audit": {
+          "available": true,
+          "method": "Copied pre-turn state + pinned engine physical-action replay",
+          "changed_actions": {
+            "PLANT": 10,
+            "WATER": 30,
+            "HARVEST": 9
+          },
+          "non_pass_noops": {},
+          "non_pass_noop_count": 0,
+          "atomic_blocked_plant_requests": {},
+          "audit_errors": [],
+          "note": "No-ops are reconstructed ineffective actions, not framework errors. Market no-ops are not measured."
+        },
+        "production": {
+          "harvested_units": {
+            "CARROT": 18
+          },
+          "fertilizer_collected": 0,
+          "successful_plant_actions": 10
+        }
+      },
+      "opponent_decisions": null,
+      "error_counts": {
+        "agent_exceptions": 0,
+        "opponent_exceptions": 0,
+        "framework_stderr_entries": 0,
+        "bad_status_types": 0,
+        "run_exceptions": 0
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "opponent_errors": [],
+      "run_error": null,
+      "replay": "tmp\\quantile_validation\\baseline_011_starter_223_1.json",
+      "variant": "baseline_011"
+    }
+  ]
+}

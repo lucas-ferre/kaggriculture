@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-09-22T00:56:49.309352+00:00",
+  "cli_version": "2.2.4",
+  "credentials_loaded": true,
+  "submission_attempted": false,
+  "checks": [
+    {
+      "check": "entered_competitions",
+      "success": true,
+      "matching_competitions": 1,
+      "entered_kaggriculture": true
+    },
+    {
+      "check": "submission_history",
+      "success": true,
+      "returned_submissions": 0
+    }
+  ]
+}

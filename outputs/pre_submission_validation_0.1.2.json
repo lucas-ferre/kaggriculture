@@ -1,0 +1,16 @@
+{
+  "source": "extracted submission archive, clean Python -I process",
+  "recorded_states": 720,
+  "statuses": [
+    "DONE",
+    "DONE"
+  ],
+  "money": [
+    104492.0,
+    107813.0
+  ],
+  "errors": [],
+  "bad_statuses": [],
+  "engine_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
+  "archive_sha256": "07984f8d7d88bebd74391e1f603c42e94dabb43e81c22141c1de125a515d47a9"
+}

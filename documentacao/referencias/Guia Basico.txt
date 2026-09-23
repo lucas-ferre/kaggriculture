@@ -1,0 +1,277 @@
+# Guia Técnico de Desenvolvimento: Agente Kaggriculture
+
+Revisão documental: 18 de setembro de 2026 (horário de Brasília).
+
+Este guia distingue:
+
+- **Regra documentada:** comportamento descrito nas páginas oficiais consultadas.
+- **Proposta de implementação:** escolha de engenharia ou estratégia a avaliar em simulações.
+- **Ponto a validar no motor:** detalhe não resolvido de forma suficiente ou consistente pela documentação.
+
+A revisão compara os documentos locais com o site oficial. Não inclui auditoria do código do simulador nem experimentos de desempenho. Conferir os parâmetros na configuração da versão efetivamente usada. Os arquivos README.md e AGENTS.md da aba Data não foram lidos, pois seu conteúdo exige login e aceite das regras.
+
+---
+
+## 1. Visão Geral e Parâmetros da Competição
+
+### Objetivo, informação e avaliação [1, 2, 3, 4]
+
+- **Natureza:** jogo competitivo por turnos entre dois agentes, em fazendas separadas e com mercado compartilhado. As decisões abrangem produção, manutenção, trabalho, estoque, investimento e vendas.
+- **Informação:** fazendas e mercado têm estado público. Galpão, sementes e inventários privados do adversário não são expostos. Não tratar o jogo inteiro como um ambiente de informação perfeita.
+- **Horizonte padrão:** 30 dias, com 24 turnos por dia, totalizando 720 turnos.
+- **Vitória por partida:** vence quem termina com mais moedas no banco; produtos não vendidos não contam. A diferença monetária não altera diretamente a atualização do rating: importa vencer, perder ou empatar.
+- **Avaliação final:** após o prazo de submissão, as partidas continuam por aproximadamente duas semanas. Um torneio Bradley-Terry sobre os episódios determina a classificação final. Distinguir esse cálculo do rating corrente.
+- **Submissões:** até 5 por dia. Segundo Overview/FAQ, as 2 mais recentes são as ativas e são usadas na avaliação final. Um episódio de validação contra uma cópia do agente verifica a execução; falhas podem resultar em status Error.
+
+### Configuração padrão e tempo [1]
+
+| Parâmetro | Padrão documentado | Consequência |
+| --- | --- | --- |
+| boardSize | 10 | Grade 10×10 por fazenda, com quatro quadrantes de 5×5. |
+| startingMoney | 3000 | Capital inicial de cada jogador. |
+| episodeSteps | 720 | Duração padrão da temporada. |
+| turnsPerDay | 24 | Duração do ciclo diário. |
+| shedCapacity | 100 | Capacidade do galpão, excluindo sementes. |
+| maxMarketOrdersPerTurn | 10 | Ordens além do limite são descartadas. |
+
+obs.day e obs.hour começam em zero. Para planejamento, usar t = day × turnsPerDay + hour: no padrão, os turnos de decisão são 0–719 e o último dia é 696–719. O número 720 expressa duração, não um índice adicional de decisão. Confirmar a correspondência com obs.step e a sequência de atualizações diárias e terminais na versão instalada.
+
+### Calendário publicado [2]
+
+| Marco | Data e hora UTC | Horário de Brasília (UTC−3) |
+| --- | --- | --- |
+| Entrada e aceite das regras | 23/09/2026, 23:59 | 23/09/2026, 20:59 |
+| Fusão de equipes | 23/09/2026, 23:59 | 23/09/2026, 20:59 |
+| Submissão final | 30/09/2026, 23:59 | 30/09/2026, 20:59 |
+| Partidas após o prazo | 01/10 a aproximadamente 15/10/2026 | Encerramento conforme convergência e anúncio oficial. |
+
+Os organizadores podem atualizar o calendário; conferir a página antes dos prazos.
+
+---
+
+## 2. Catálogo de Produção e Cuidados [1]
+
+Os preços de venda são bases de referência, não receitas garantidas. As idades indicam dias desde o plantio ou a colocação do animal, não o dia absoluto da temporada.
+
+### Culturas
+
+| Cultura | Custo da semente | Preço-base | Primeiro rendimento | Evolução documentada |
+| --- | --- | --- | --- | --- |
+| Trigo (WHEAT) | 10 | 25 | 2 dias | Colheita única; pico com rega diária na idade 4; até 4 unidades sem fertilizante ou 6 com fertilizante. |
+| Cenoura (CARROT) | 20 | 35 | 2 dias | Colheita única; pico com rega diária na idade 3; até 3 unidades sem fertilizante ou 4 com fertilizante. |
+| Tomate (TOMATO) | 50 | 60 | 8 dias | Produção programada nas idades 8, 9, 10 e 11; ciclo limitado. |
+| Morango (STRAWBERRY) | 100 | 120 | 10 dias | Produção programada nas idades 10, 12, 14 e 16; ciclo limitado. |
+| Melão (MELON) | 80 | 250 | 10 dias na tabela oficial | Colheita única; teto de 6 unidades. O texto descreve bônus nas idades 6–12, atingindo o teto na idade 10 com rega diária ou 8 com fertilizante. Ver ressalva abaixo. |
+
+- **Sobrevivência:** plantas viram WEED ao atingir dois dias consecutivos sem rega. Para plantas estabelecidas, regar em dias alternados pode preservar a sobrevivência; isso não garante rendimento igual ao da rega diária.
+- **Plantio:** uma semente nova começa com consecutive_unwatered = 1. Deve receber WATER no mesmo dia do plantio; caso contrário, vira erva daninha naquela noite. Reservar a rega antes de autorizar plantio perto da virada.
+- **Rega repetida:** WATER só tem efeito uma vez por planta por dia. Consultar também watered_today, não apenas o contador de ausência de rega.
+- **Colheita única:** regar dentro da janela de bônus aumenta as unidades disponíveis; fertilizante dobra esse bônus diário durante seu efeito.
+- **Tomate e morango:** produção programada e ação HARVEST são eventos distintos. O ciclo limitado não significa que sejam necessárias exatamente quatro ações de colheita. A descrição informa base de uma unidade por produção e duas quando há fertilizante e rega naquele dia.
+- **Limite e decadência:** não assumir que tomate e morango viram WEED imediatamente após a quarta colheita. O encerramento está ligado à produção acumulada. A documentação descreve decadência posterior, com perda de uma unidade a cada dois turnos até chegar a zero. Confirmar como fertilização e limite acumulado interagem.
+- **Culturas de colheita única:** a decadência é vinculada ao parâmetro max_yield_day. Não substituir esse parâmetro automaticamente pela idade de pico observada na tabela.
+- **Melão — ponto a validar:** a idade de atingir o teto de unidades não deve ser confundida com a idade em que HARVEST permite recebê-las. A menção ao teto na idade 8 não prova colheita produtiva nessa idade; reconciliar a tabela e a janela de bônus com o motor.
+
+### Animais
+
+| Animal | Custo de compra | Produto / preço-base | Primeira produção | Intervalo posterior de produção | Produto não colhido máximo na célula | Estrutura |
+| --- | --- | --- | --- | --- | --- | --- |
+| Ganso (GOOSE) | 300 | Ovo (EGG) / 50 | 4 dias | Diariamente | 4 | COOP |
+| Vaca (COW) | 400 | Leite (MILK) / 160 | 8 dias | A cada 2 dias | 6 | PASTURE |
+| Ovelha (SHEEP) | 500 | Lã (WOOL) / 200 | 6 dias | A cada 3 dias | 6 | PASTURE |
+
+O custo da tabela é o preço do animal. A operação também exige estrutura compatível, transporte, colocação, alimentação e trabalho.
+
+- **Alimentação:** todos usam trigo por FEED, com efeito uma vez por dia. Dois dias consecutivos sem alimentação causam fuga. Os intervalos de leite e lã são de produção, não de alimentação.
+- **Sobrevivência versus rendimento:** alimentar em dias alternados pode evitar fuga; alimentação diária permite aproveitar os bônus de cuidado de cada dia. Animais novos começam com consecutive_unfed = 0 e sobrevivem ao primeiro dia sem alimento.
+- **Cuidado (CARE):** no fim de um dia com alimentação e cuidado, incrementa-se pending_care_bonus. Na próxima produção programada, se o animal estiver alimentado, recebe base mais bônus acumulado, respeitando a capacidade da célula. Sem alimentação no dia da produção, a descrição informa produção-base, perda do bônus acumulado e reinício desse contador.
+- **Capacidade:** os limites 4/6/6 são de produto ainda não colhido na célula, não de produção total ao longo da vida. Planejar colheitas para evitar desperdício de produção e bônus.
+
+### Fertilizante
+
+- É comprável e vendável, com preço-base 100 e preço dinâmico. Comparar aplicação nas plantas com receita de venda.
+- Cada animal sobrevivente disponibiliza uma unidade ao fim do dia, mesmo sem alimentação ou cuidado naquele dia. COLLECT_FERTILIZER recolhe essa unidade.
+- Fertilizante não recolhido no animal não se acumula: há uma unidade disponível, não uma pilha crescente.
+- FERTILIZE concede bônus por três dias, condicionado à rega. Em culturas de colheita única, dobra o incremento diário dentro da janela de bônus; nas de produção programada, aplica-se a regra específica acima.
+
+---
+
+## 3. Espaço, Trabalho, Estoques e Mercado [1]
+
+### Movimento e ações
+
+- Cada fazendeiro e trabalhador pode receber uma ação por turno. O mercado usa uma lista separada de ordens.
+- **Unidades podem compartilhar uma célula.** Não impor espera ou desvio apenas porque dois trabalhadores se encontram. Coordenar tarefas e consumo de recursos compartilhados continua sendo necessário.
+- NORTH, SOUTH, EAST e WEST movem uma célula; movimentos para fora do mapa não têm efeito.
+- Quadrantes não comprados são transitáveis, mas ações que alteram a célula, como PLANT, WATER e BUILD_*, não têm efeito nessas áreas.
+- A fazenda começa com o quadrante NW liberado. BUY_LAND libera quadrantes adicionais de 5×5, aos custos progressivos padrão de 1000, 2000 e 4000 moedas.
+- Sementes têm estoque global separado e são consumidas diretamente por PLANT, sem PICKUP. Se tentativas simultâneas do mesmo tipo excederem o estoque, a documentação informa que nenhuma dessas sementes é plantada. Reservar sementes para o conjunto de ações.
+
+### Trabalhadores contratados
+
+- HIRE contrata para o dia corrente. No fim do dia, trabalhadores depositam o inventário, sujeito à capacidade do galpão, e desaparecem; precisam ser recontratados.
+- O custo segue farmHandCostMult × fib(n), com sequência inicial 1, 1, 2, 3, 5, 8, 13... para multiplicador padrão 1. A sequência reinicia a cada dia.
+- Unidades surgem junto ao galpão e podem aparecer em quadrante bloqueado, do qual conseguem sair por movimento.
+- **Proposta:** avaliar contratação pelo ganho marginal e pelas ações úteis restantes no dia, não por quantidade fixa durante a temporada.
+
+### Galpão e inventários
+
+- O galpão fica no centro e não é uma célula de tiles.
+- As posições de acesso são (half−1, half−1), (half, half−1), (half−1, half) e (half, half), com half = boardSize // 2. No padrão: (4,4), (5,4), (4,5) e (5,5).
+- PICKUP, DROP e PLACE para depósito funcionam nessas posições mesmo quando o quadrante está bloqueado.
+- A capacidade padrão é 100 itens, excluindo sementes. DROP e depósito automático de fim de dia descartam excedentes. Manter produtos com trabalhadores não contorna a capacidade na virada.
+- **Ambiguidade de PLACE:** a definição da ação diz que o excesso permanece no inventário; a seção geral do galpão menciona descarte inclusive em PLACE. Validar no motor. Até lá, limitar depósitos ao espaço disponível.
+- **Estoque de SELL:** confirmar quais estoques a ordem acessa e em que momento. Como política inicial conservadora, planejar depósito antes da venda, sem contar com venda direta do inventário carregado.
+
+### Mercado
+
+- Sementes e animais têm preços fixos de compra. Produtos reagem a compras, vendas dos dois jogadores e consumo da cidade.
+- BUY_PRODUCT permite comprar trigo e fertilizante. Os demais produtos podem ser vendidos, mas não recomprados por essa ação.
+- Incluir fertilizante nas decisões de venda e liquidação.
+- O limite padrão é 10 ordens por jogador por turno. A lista tem ordem; quantidades são processadas unidade a unidade, de forma concorrente entre jogadores. Uma venda grande pode alterar preços durante a execução: não estimar toda a receita apenas pelo preço observado inicialmente.
+- Lojas da cidade aparecem a cada três dias no padrão, com sorteio que permite repetições e limite de oito instâncias. Não assumir que todos os tipos aparecerão.
+- As curvas de preço diferem por produto. Produtos de maior preço-base podem sofrer quedas acentuadas por excesso de oferta; avaliar receita marginal e atividade observável do adversário.
+- A ordem publicada do turno coloca ações das unidades antes do mercado. Não pressupor que uma compra abasteça uma ação simultânea de plantio ou alimentação; validar o acesso efetivo aos recursos na versão usada.
+
+---
+
+## 4. Tecnologias: Propostas a Avaliar
+
+Estas escolhas são hipóteses de engenharia. Não há benchmarks locais que comprovem a superioridade de um método.
+
+| Componente | Ponto de partida proposto | Critério de evolução |
+| --- | --- | --- |
+| Estado | Estruturas Python simples; NumPy quando útil. | Custo do parser e facilidade de validação. |
+| Estratégia econômica | Heurísticas de retorno, orçamento, demanda e prazo. | Desempenho em múltiplas sementes e adversários. |
+| Distribuição de tarefas | Prioridade por prazo, valor e deslocamento; alocação gulosa inicial. | Ganho mensurável com atribuição bipartida ou algoritmo Húngaro. |
+| Rotas e horários | Distância Manhattan como referência; conferir transitabilidade real. | Busca ou planejamento com janelas de tempo quando necessários. |
+| Ajuste de parâmetros | Busca aleatória ou hill climbing com reinicializações em simulações locais. | Avaliação separada dos cenários usados no ajuste. |
+
+VRPTW pode inspirar tarefas com prazo, mas não modela sozinho produção, mercado e orçamento. A urgência depende de contadores, indicadores de cuidado e ações até o próximo fim de dia; uma janela genérica de 48 horas não cobre todos os casos.
+
+Cooperative A* e reservas espaço-temporais para evitar colisões entre unidades não são necessários pela regra de ocupação compartilhada. A eventual adoção de A* por outro motivo deve ter suas hipóteses justificadas.
+
+SNN, ACO, aprendizado por reforço e outras técnicas não foram avaliados neste projeto. Não afirmar inviabilidade ou inferioridade apenas porque o tempo é discreto. Começar por uma política verificável e uma avaliação que permita comparar alternativas.
+
+---
+
+## 5. Arquitetura Proposta do Agente
+
+    Observação e configuração
+              |
+              v
+    1. Leitura e validação do estado
+       Fazenda, estado público adversário, estoques, mercado,
+       tempo restante e cuidados ainda pendentes no dia.
+              |
+              v
+    2. Planejamento econômico
+       Produção, contratação, expansão, vendas e reserva de caixa.
+       Investimentos condicionados ao retorno antes do fim.
+              |
+              v
+    3. Geração de tarefas
+       Regar, alimentar, cuidar, colher, transportar, plantar,
+       construir e coletar fertilizante, com prazo e valor.
+              |
+              v
+    4. Distribuição e reserva de recursos
+       Associar unidades a tarefas; reservar itens e orçamento;
+       evitar redundância, permitindo ocupação compartilhada.
+              |
+              v
+    5. Emissão e validação
+       Ações das unidades e mercado dentro do limite.
+       Registro de falhas e contingência quando necessária.
+
+- **Manutenção:** antes de investir, reservar trabalho para cuidados viáveis e avaliar perdas iminentes. Não impor prioridade absoluta entre todas as plantas e todos os animais; considerar prazo, valor em risco e custo.
+- **Fases econômicas:** início, expansão e encerramento podem orientar a política, mas as transições dependem do estado. Os antigos cortes nos turnos 200, 550 e 551 não têm validação experimental.
+- **Contingência:** PASS serve para unidade sem tarefa ou falha recuperável. Não garante uma submissão válida. Manter erros visíveis nos testes e evitar tratamento genérico silencioso que esconda defeitos.
+
+---
+
+## 6. Orientações de Implementação e Fim de Partida
+
+### Leitura do estado
+
+- A fazenda própria está em obs.farms[obs.player]; o estoque privado, em obs.private.
+- Ler as dimensões de tiles e conferir a configuração. Não fixar matrizes em 30×30 nem presumir os padrões em todos os episódios.
+- Usar tiles[y][x]; posições das unidades são [x, y].
+- Distinguir None (vazia liberada), "LOCKED" e dicionários de plantas, ervas daninhas ou estruturas. Estruturas podem estar sem animal.
+- Registrar espécie, idade, produção disponível, watered_today, fed_today, cared_today, contadores de ausência de cuidado, fertilização, disponibilidade de fertilizante e pending_care_bonus.
+- Separar permissão de transitar da permissão de executar ações na célula.
+
+### Coordenação por turno
+
+- Planejar ações e mercado respeitando o momento em que os recursos estarão disponíveis.
+- Para consecutive_unwatered = 1, verificar se a planta já foi regada e quantas ações restam antes da virada; usar lógica equivalente para animais e fed_today.
+- Incluir deslocamento, ação principal, transporte e dependências no custo de tarefas.
+- Impedir consumo agregado maior que o estoque, sobretudo em plantios simultâneos. Permitir posições compartilhadas.
+
+### Investimento e liquidação
+
+- **Proposta:** investir quando houver expectativa de recuperar o custo antes do fim, incluindo compra, trabalho, manutenção, ocupação da terra e efeito das vendas nos preços.
+- Os antigos cortes de plantio nos dias 20, 22 e 27 não são regras oficiais nem garantias de viabilidade. Usar idade, processamento diário, produção esperada e tempo para colher, depositar e vender.
+- Primeiro rendimento antes do fim não basta: o produto precisa virar saldo e compensar custos. Culturas tardias podem aproveitar apenas parte do ciclo.
+- Programar transporte e vendas antes do último turno. Não depender de depósito automático terminal sem confirmar oportunidade posterior de venda.
+- No último dia padrão (day = 29; decisões 696–719), priorizar conversão de estoque vendável em moedas e evitar gastos sem retorno. Mover, colher e depositar ainda pode ser necessário; apenas emitir SELL não garante liquidação.
+- Respeitar o estoque acessível ao mercado. Não assumir conversão automática de plantas, animais, sementes ou produtos carregados em dinheiro.
+
+---
+
+## 7. Execução, Submissão e Validação [1, 3, 5]
+
+- A submissão Python deve expor agent em main.py. No pacote com múltiplos arquivos, main.py deve ficar na raiz do .tar.gz.
+- O manual local propõe src/, módulos separados e uv. São escolhas do projeto, não requisitos. Adaptar os comandos Unix ao shell utilizado.
+- O ambiente local é fornecido por kaggle-environments; pass, random e starter são agentes documentados para comparação inicial.
+- Limites publicados: submissão de 100 MiB, 6,5 GiB de RAM, 1,6 vCPU e 8 GiB de disco. Arquivos ficam em /kaggle_simulations/agent/.
+- As regras proíbem buscar ou enviar informações externas durante um episódio. O agente deve operar com a submissão e o ambiente disponibilizados.
+- Confirmar assinatura aceita, formato de retorno, tempo por chamada, persistência entre decisões e bibliotecas na versão de execução. A estrutura de pastas do manual não resolve esses detalhes.
+
+### Pontos a verificar no motor antes de depender deles
+
+1. Excedente em PLACE, distinguindo-o de DROP e depósito automático.
+2. Estoques consultados por SELL, ordem de acesso aos recursos e depósito no encerramento.
+3. Maturação, teto e decadência do melão; efeito da fertilização no limite de tomate e morango.
+4. Indexação, último turno acionável e sequência de atualizações diárias e terminais.
+5. Origem do trigo usado por FEED, custo efetivo das construções e comportamento das ações inválidas.
+
+### Avaliação proposta
+
+Começar com uma partida completa, verificando ações, status e replay. Depois, comparar múltiplas sementes aleatórias, ambos os lados e diferentes adversários, incluindo autojogo. Uma partida contra random é um teste inicial, não prova de competitividade.
+
+Medir saldo final, vitórias, falhas, ações sem efeito, perdas por falta de cuidado, perdas de estoque e tempo por decisão. Confirmar o significado de reward antes de apresentá-lo como valor monetário. Separar cenários de ajuste e avaliação.
+
+---
+
+## 8. Fontes e Limites da Revisão
+
+Fontes consultadas em 18/09/2026, horário de Brasília:
+
+1. Kaggle — Overview: How to Play, Observation Format, Configuration Defaults, Getting Started e FAQ.
+   https://www.kaggle.com/competitions/kaggriculture/overview
+2. Kaggle — Overview: Timeline e Evaluation.
+   https://www.kaggle.com/competitions/kaggriculture/overview
+3. Kaggle — Rules.
+   https://www.kaggle.com/competitions/kaggriculture/rules
+4. María Cruz, Kaggle Staff — Comment on the final evaluation for this competition.
+   https://www.kaggle.com/competitions/kaggriculture/discussion/731587
+5. Documento local — MANUAL_SUBMISSAO.md.pdf, páginas 1–3.
+6. Bovard Doerschuk-Tiberi, Kaggle Staff — Daily Top Episodes Dataset. Referência para futura análise de replays; o conjunto não foi baixado ou analisado nesta revisão.
+   https://www.kaggle.com/competitions/kaggriculture/discussion/731215
+
+As propostas de arquitetura não foram avaliadas empiricamente. Em divergências de mecânica, confrontar documentação e versão do motor usada nos episódios, registrando a versão e a evidência antes de adotar uma suposição.
+
+
+
+---
+
+## Atualização de implementação — 19/09/2026
+
+A arquitetura inicial está implementada em kaggriculture_agent/. Consulte o README.md da raiz para execução e documentacao/tecnica/ARCHITECTURE.md para o modelo de mercado, cultivo duplo recorrente e variantes de otimização.
+
+As pendências documentais anteriores foram verificadas no snapshot oficial 28b6d8af3ce73926b3d0fda1410c1ddd8384ab8c, por código e testes: PLACE preserva excedente; SELL acessa apenas o galpão; FEED usa trigo carregado pela unidade; melão só pode ser colhido a partir da idade 10; tomate/morango têm quatro eventos de produção, independentemente da fertilização. As construções não descontam moedas nesse snapshot.
+
+Correção da convenção operacional: o framework registra 720 estados, mas a última decisão acionável é step=718; step=719 já é terminal. A virada que ocorreria na ação 719 não é processada. A implementação planeja depósito explícito e venda antes desse encerramento.
+
+Essas constatações substituem as incertezas e a convenção de decisão das seções anteriores para a versão fixada. Evidências, testes e limites estão em documentacao/tecnica/ENGINE_NOTES.md. As projeções probabilísticas e escolhas estratégicas continuam sendo hipóteses a avaliar, não garantias de desempenho.

@@ -1,0 +1,174 @@
+{
+  "engine": {
+    "framework_version": "1.32.7",
+    "engine_commit": "28b6d8af3ce73926b3d0fda1410c1ddd8384ab8c",
+    "engine_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
+    "framework_import_messages": "Loading environment halite failed: No module named 'numpy'\nLoading environment kore_fleets failed: No module named 'numpy'\nLoading environment lux_ai_s3 failed: No module named 'numpy'\nLoading environment open_spiel_env failed: No module named 'numpy'\nLoading environment reinforce_tactics failed: No module named 'numpy'"
+  },
+  "episode_steps": 720,
+  "seeds": [
+    11
+  ],
+  "paired_sides": true,
+  "note": "Local baselines measure functionality and ablations; they do not estimate leaderboard strength.",
+  "summary": {
+    "dual_forecast/starter": {
+      "matches": 2,
+      "valid_matches": 2,
+      "outcomes": {
+        "win": 2
+      },
+      "win_rate": 1.0,
+      "mean_money": 39764.5,
+      "mean_margin": 36324.0,
+      "max_decision_ms": 422.5830999785103
+    }
+  },
+  "matches": [
+    {
+      "seed": 11,
+      "side": 0,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 6,
+        "max_plots": 20,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "enumerate",
+        "use_forecast": true,
+        "dual_cycle": true,
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 39765.0,
+      "opponent_money": 3460.0,
+      "margin": 36305.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.6918961060160878,
+        "p95_ms": 7.641599979251623,
+        "max_ms": 422.5830999785103
+      },
+      "wall_seconds": 3.616201500000898,
+      "operations_requested": {
+        "PASS": 1834,
+        "PLANT": 98,
+        "WEST": 560,
+        "NORTH": 515,
+        "WATER": 651,
+        "HARVEST": 98,
+        "DROP": 57,
+        "EAST": 140,
+        "SOUTH": 145
+      },
+      "plant_requests": {
+        "WHEAT": 70,
+        "MELON": 28
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "WHEAT": 70,
+          "MELON": 28
+        },
+        "occupied_tile_states": {
+          "WHEAT": 6335,
+          "MELON": 6642
+        }
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "run_error": null,
+      "variant": "dual_forecast"
+    },
+    {
+      "seed": 11,
+      "side": 1,
+      "opponent": "starter",
+      "opponent_reproducible": true,
+      "policy": {
+        "fast_share": 0.6,
+        "risk_aversion": 0.35,
+        "target_workers": 6,
+        "max_plots": 20,
+        "cash_reserve": 300.0,
+        "scheduler": "greedy",
+        "optimizer": "enumerate",
+        "use_forecast": true,
+        "dual_cycle": true,
+        "labor_cost_per_action": 0.6,
+        "labor_actions_per_plot_day": 2.2,
+        "labor_utilization": 0.65,
+        "logistics_margin": 12,
+        "allocation_slack": 0.15,
+        "ongoing_preference": 0.03,
+        "beam_width": 16
+      },
+      "valid": true,
+      "money": 39764.0,
+      "opponent_money": 3421.0,
+      "margin": 36343.0,
+      "outcome": "win",
+      "statuses": [
+        "DONE",
+        "DONE"
+      ],
+      "bad_statuses_seen": [],
+      "recorded_states": 720,
+      "last_observation_step": 719,
+      "decisions": {
+        "count": 719,
+        "mean_ms": 2.6230493740804275,
+        "p95_ms": 7.939200033433735,
+        "max_ms": 399.8439999995753
+      },
+      "wall_seconds": 3.5791705999872647,
+      "operations_requested": {
+        "PASS": 1833,
+        "PLANT": 98,
+        "WEST": 560,
+        "NORTH": 515,
+        "WATER": 651,
+        "HARVEST": 98,
+        "DROP": 57,
+        "EAST": 140,
+        "SOUTH": 145,
+        "DIG": 1
+      },
+      "plant_requests": {
+        "WHEAT": 70,
+        "MELON": 28
+      },
+      "crop_mix": {
+        "successful_plantings": {
+          "WHEAT": 70,
+          "MELON": 28
+        },
+        "occupied_tile_states": {
+          "WHEAT": 6334,
+          "MELON": 6642
+        }
+      },
+      "errors": [],
+      "framework_stderr": [],
+      "run_error": null,
+      "variant": "dual_forecast"
+    }
+  ]
+}

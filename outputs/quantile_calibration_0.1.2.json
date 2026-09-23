@@ -1,0 +1,1275 @@
+{
+  "approved": true,
+  "approved_products": [
+    "FERTILIZER",
+    "WOOL"
+  ],
+  "products": {
+    "WHEAT": {
+      "approved": false,
+      "validation": {
+        "rows": 464,
+        "episodes": 4,
+        "eligible_rows": 350,
+        "deployed_pinball": 0.01034027523785617,
+        "eligible_coverage_le": 0.06,
+        "eligible_coverage_lt": 0.06,
+        "pinball": 0.019384286469497816,
+        "empirical_pinball": 0.004504310344827586,
+        "coverage_le": 0.2607758620689655,
+        "coverage_lt": 0.2607758620689655
+      },
+      "training": {
+        "training_rows": 464,
+        "sweeps": 80,
+        "coordinate_change_converged": false,
+        "training_objective": 0.014728087544496511
+      },
+      "gate": {
+        "sufficient_episodes": true,
+        "pinball_improved_2pct": false,
+        "coverage_within_fixed_tolerance": false
+      }
+    },
+    "CARROT": {
+      "approved": false,
+      "validation": {
+        "rows": 464,
+        "episodes": 4,
+        "eligible_rows": 448,
+        "deployed_pinball": 0.007359780547007595,
+        "eligible_coverage_le": 0.18080357142857142,
+        "eligible_coverage_lt": 0.18080357142857142,
+        "pinball": 0.008362608694411633,
+        "empirical_pinball": 0.005310960591133005,
+        "coverage_le": 0.17456896551724138,
+        "coverage_lt": 0.17456896551724138
+      },
+      "training": {
+        "training_rows": 464,
+        "sweeps": 80,
+        "coordinate_change_converged": false,
+        "training_objective": 0.007832535160087126
+      },
+      "gate": {
+        "sufficient_episodes": true,
+        "pinball_improved_2pct": false,
+        "coverage_within_fixed_tolerance": true
+      }
+    },
+    "TOMATO": {
+      "approved": false,
+      "validation": {
+        "rows": 464,
+        "episodes": 4,
+        "eligible_rows": 304,
+        "deployed_pinball": 0.004056300096646372,
+        "eligible_coverage_le": 0.16776315789473684,
+        "eligible_coverage_lt": 0.16776315789473684,
+        "pinball": 0.07693190389168084,
+        "empirical_pinball": 0.0031609195402298863,
+        "coverage_le": 0.14224137931034483,
+        "coverage_lt": 0.14224137931034483
+      },
+      "training": {
+        "training_rows": 464,
+        "sweeps": 80,
+        "coordinate_change_converged": false,
+        "training_objective": 0.0015011197937515595
+      },
+      "gate": {
+        "sufficient_episodes": true,
+        "pinball_improved_2pct": false,
+        "coverage_within_fixed_tolerance": true
+      }
+    },
+    "STRAWBERRY": {
+      "approved": false,
+      "validation": {
+        "rows": 464,
+        "episodes": 4,
+        "eligible_rows": 454,
+        "deployed_pinball": 0.01459617452125892,
+        "eligible_coverage_le": 0.11894273127753303,
+        "eligible_coverage_lt": 0.11013215859030837,
+        "pinball": 0.015006308839526762,
+        "empirical_pinball": 0.002689475574712644,
+        "coverage_le": 0.13793103448275862,
+        "coverage_lt": 0.12931034482758622
+      },
+      "training": {
+        "training_rows": 464,
+        "sweeps": 80,
+        "coordinate_change_converged": false,
+        "training_objective": 0.011542693774155012
+      },
+      "gate": {
+        "sufficient_episodes": true,
+        "pinball_improved_2pct": false,
+        "coverage_within_fixed_tolerance": true
+      }
+    },
+    "MELON": {
+      "approved": false,
+      "validation": {
+        "rows": 464,
+        "episodes": 4,
+        "eligible_rows": 464,
+        "deployed_pinball": 0.017999100295544603,
+        "eligible_coverage_le": 0.1724137931034483,
+        "eligible_coverage_lt": 0.16379310344827586,
+        "pinball": 0.017999100295544603,
+        "empirical_pinball": 0.0124698275862069,
+        "coverage_le": 0.1724137931034483,
+        "coverage_lt": 0.16379310344827586
+      },
+      "training": {
+        "training_rows": 464,
+        "sweeps": 80,
+        "coordinate_change_converged": false,
+        "training_objective": 0.020679993473977643
+      },
+      "gate": {
+        "sufficient_episodes": true,
+        "pinball_improved_2pct": false,
+        "coverage_within_fixed_tolerance": true
+      }
+    },
+    "EGG": {
+      "approved": false,
+      "validation": {
+        "rows": 464,
+        "episodes": 4,
+        "eligible_rows": 464,
+        "deployed_pinball": 0.0018828579017843932,
+        "eligible_coverage_le": 0.2974137931034483,
+        "eligible_coverage_lt": 0.2974137931034483,
+        "pinball": 0.0018828579017843932,
+        "empirical_pinball": 0.00025862068965517264,
+        "coverage_le": 0.2974137931034483,
+        "coverage_lt": 0.2974137931034483
+      },
+      "training": {
+        "training_rows": 464,
+        "sweeps": 80,
+        "coordinate_change_converged": false,
+        "training_objective": 0.0018635637609262627
+      },
+      "gate": {
+        "sufficient_episodes": true,
+        "pinball_improved_2pct": false,
+        "coverage_within_fixed_tolerance": true
+      }
+    },
+    "MILK": {
+      "approved": false,
+      "validation": {
+        "rows": 464,
+        "episodes": 4,
+        "eligible_rows": 400,
+        "deployed_pinball": 0.020691458645836467,
+        "eligible_coverage_le": 0.405,
+        "eligible_coverage_lt": 0.405,
+        "pinball": 0.022824023718618622,
+        "empirical_pinball": 0.03608230064655173,
+        "coverage_le": 0.4870689655172414,
+        "coverage_lt": 0.4870689655172414
+      },
+      "training": {
+        "training_rows": 464,
+        "sweeps": 79,
+        "coordinate_change_converged": true,
+        "training_objective": 0.01557326932289663
+      },
+      "gate": {
+        "sufficient_episodes": true,
+        "pinball_improved_2pct": true,
+        "coverage_within_fixed_tolerance": false
+      }
+    },
+    "WOOL": {
+      "approved": true,
+      "validation": {
+        "rows": 464,
+        "episodes": 4,
+        "eligible_rows": 464,
+        "deployed_pinball": 0.021743087855660852,
+        "eligible_coverage_le": 0.3232758620689655,
+        "eligible_coverage_lt": 0.30603448275862066,
+        "pinball": 0.021743087855660852,
+        "empirical_pinball": 0.03348868534482758,
+        "coverage_le": 0.3232758620689655,
+        "coverage_lt": 0.30603448275862066
+      },
+      "training": {
+        "training_rows": 464,
+        "sweeps": 62,
+        "coordinate_change_converged": true,
+        "training_objective": 0.008377380861503587
+      },
+      "gate": {
+        "sufficient_episodes": true,
+        "pinball_improved_2pct": true,
+        "coverage_within_fixed_tolerance": true
+      }
+    },
+    "FERTILIZER": {
+      "approved": true,
+      "validation": {
+        "rows": 464,
+        "episodes": 4,
+        "eligible_rows": 464,
+        "deployed_pinball": 0.00177261037063967,
+        "eligible_coverage_le": 0.23922413793103448,
+        "eligible_coverage_lt": 0.23922413793103448,
+        "pinball": 0.00177261037063967,
+        "empirical_pinball": 0.008776939655172414,
+        "coverage_le": 0.23922413793103448,
+        "coverage_lt": 0.23922413793103448
+      },
+      "training": {
+        "training_rows": 464,
+        "sweeps": 80,
+        "coordinate_change_converged": false,
+        "training_objective": 0.0022726759192205665
+      },
+      "gate": {
+        "sufficient_episodes": true,
+        "pinball_improved_2pct": true,
+        "coverage_within_fixed_tolerance": true
+      }
+    }
+  },
+  "training_replays": [
+    {
+      "path": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\tmp\\quantile_train\\baseline_011_baseline_010_101_0.json",
+      "sha256": "c3f1b3039717753caca5a885dd9b52bdd31cd52726b3ba5bcad0e90aeea80c21",
+      "seed": 101,
+      "configuration": {
+        "turnsPerDay": 24,
+        "episodeSteps": 720,
+        "townShopUnlockInterval": 3,
+        "townShopSellInterval": 4,
+        "townCenterSellInterval": 24,
+        "marketParams": {
+          "WHEAT": {
+            "base": 25,
+            "I0": 10000,
+            "T": 400,
+            "below_func": "sqrt",
+            "below_target": 0.8,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "CARROT": {
+            "base": 35,
+            "I0": 10000,
+            "T": 450,
+            "below_func": "hinge",
+            "below_target": 1.0,
+            "above_func": "sqrt",
+            "above_target": 0.7
+          },
+          "TOMATO": {
+            "base": 60,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "sqrt",
+            "above_target": 0.6
+          },
+          "STRAWBERRY": {
+            "base": 120,
+            "I0": 10000,
+            "T": 100,
+            "below_func": "sqrt",
+            "below_target": 0.7,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "MELON": {
+            "base": 250,
+            "I0": 10000,
+            "T": 300,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.6
+          },
+          "EGG": {
+            "base": 50,
+            "I0": 10000,
+            "T": 332,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "MILK": {
+            "base": 160,
+            "I0": 10000,
+            "T": 122,
+            "below_func": "sqrt",
+            "below_target": 0.6,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "WOOL": {
+            "base": 200,
+            "I0": 10000,
+            "T": 105,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.2
+          },
+          "FERTILIZER": {
+            "base": 100,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "linear",
+            "below_target": 0.4,
+            "above_func": "linear",
+            "above_target": 0.4
+          }
+        }
+      },
+      "recorded_states": 720
+    },
+    {
+      "path": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\tmp\\quantile_train\\baseline_011_baseline_010_101_1.json",
+      "sha256": "6a83ab2b2d8581b27c7e02182f2877e0a5ab94d1c82e004dc7574e8dd0b47085",
+      "seed": 101,
+      "configuration": {
+        "turnsPerDay": 24,
+        "episodeSteps": 720,
+        "townShopUnlockInterval": 3,
+        "townShopSellInterval": 4,
+        "townCenterSellInterval": 24,
+        "marketParams": {
+          "WHEAT": {
+            "base": 25,
+            "I0": 10000,
+            "T": 400,
+            "below_func": "sqrt",
+            "below_target": 0.8,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "CARROT": {
+            "base": 35,
+            "I0": 10000,
+            "T": 450,
+            "below_func": "hinge",
+            "below_target": 1.0,
+            "above_func": "sqrt",
+            "above_target": 0.7
+          },
+          "TOMATO": {
+            "base": 60,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "sqrt",
+            "above_target": 0.6
+          },
+          "STRAWBERRY": {
+            "base": 120,
+            "I0": 10000,
+            "T": 100,
+            "below_func": "sqrt",
+            "below_target": 0.7,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "MELON": {
+            "base": 250,
+            "I0": 10000,
+            "T": 300,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.6
+          },
+          "EGG": {
+            "base": 50,
+            "I0": 10000,
+            "T": 332,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "MILK": {
+            "base": 160,
+            "I0": 10000,
+            "T": 122,
+            "below_func": "sqrt",
+            "below_target": 0.6,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "WOOL": {
+            "base": 200,
+            "I0": 10000,
+            "T": 105,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.2
+          },
+          "FERTILIZER": {
+            "base": 100,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "linear",
+            "below_target": 0.4,
+            "above_func": "linear",
+            "above_target": 0.4
+          }
+        }
+      },
+      "recorded_states": 720
+    },
+    {
+      "path": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\tmp\\quantile_train\\baseline_011_baseline_010_103_0.json",
+      "sha256": "a0baf03683d7a074c27c4f9493a52949e57d093c30e5f4aa8fe3694ddb1081e2",
+      "seed": 103,
+      "configuration": {
+        "turnsPerDay": 24,
+        "episodeSteps": 720,
+        "townShopUnlockInterval": 3,
+        "townShopSellInterval": 4,
+        "townCenterSellInterval": 24,
+        "marketParams": {
+          "WHEAT": {
+            "base": 25,
+            "I0": 10000,
+            "T": 400,
+            "below_func": "sqrt",
+            "below_target": 0.8,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "CARROT": {
+            "base": 35,
+            "I0": 10000,
+            "T": 450,
+            "below_func": "hinge",
+            "below_target": 1.0,
+            "above_func": "sqrt",
+            "above_target": 0.7
+          },
+          "TOMATO": {
+            "base": 60,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "sqrt",
+            "above_target": 0.6
+          },
+          "STRAWBERRY": {
+            "base": 120,
+            "I0": 10000,
+            "T": 100,
+            "below_func": "sqrt",
+            "below_target": 0.7,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "MELON": {
+            "base": 250,
+            "I0": 10000,
+            "T": 300,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.6
+          },
+          "EGG": {
+            "base": 50,
+            "I0": 10000,
+            "T": 332,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "MILK": {
+            "base": 160,
+            "I0": 10000,
+            "T": 122,
+            "below_func": "sqrt",
+            "below_target": 0.6,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "WOOL": {
+            "base": 200,
+            "I0": 10000,
+            "T": 105,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.2
+          },
+          "FERTILIZER": {
+            "base": 100,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "linear",
+            "below_target": 0.4,
+            "above_func": "linear",
+            "above_target": 0.4
+          }
+        }
+      },
+      "recorded_states": 720
+    },
+    {
+      "path": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\tmp\\quantile_train\\baseline_011_baseline_010_103_1.json",
+      "sha256": "f4d999b5700d01fe7692ce5f395be0e61ebd93c21595fedd7ff8932ee8ce87f1",
+      "seed": 103,
+      "configuration": {
+        "turnsPerDay": 24,
+        "episodeSteps": 720,
+        "townShopUnlockInterval": 3,
+        "townShopSellInterval": 4,
+        "townCenterSellInterval": 24,
+        "marketParams": {
+          "WHEAT": {
+            "base": 25,
+            "I0": 10000,
+            "T": 400,
+            "below_func": "sqrt",
+            "below_target": 0.8,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "CARROT": {
+            "base": 35,
+            "I0": 10000,
+            "T": 450,
+            "below_func": "hinge",
+            "below_target": 1.0,
+            "above_func": "sqrt",
+            "above_target": 0.7
+          },
+          "TOMATO": {
+            "base": 60,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "sqrt",
+            "above_target": 0.6
+          },
+          "STRAWBERRY": {
+            "base": 120,
+            "I0": 10000,
+            "T": 100,
+            "below_func": "sqrt",
+            "below_target": 0.7,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "MELON": {
+            "base": 250,
+            "I0": 10000,
+            "T": 300,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.6
+          },
+          "EGG": {
+            "base": 50,
+            "I0": 10000,
+            "T": 332,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "MILK": {
+            "base": 160,
+            "I0": 10000,
+            "T": 122,
+            "below_func": "sqrt",
+            "below_target": 0.6,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "WOOL": {
+            "base": 200,
+            "I0": 10000,
+            "T": 105,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.2
+          },
+          "FERTILIZER": {
+            "base": 100,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "linear",
+            "below_target": 0.4,
+            "above_func": "linear",
+            "above_target": 0.4
+          }
+        }
+      },
+      "recorded_states": 720
+    }
+  ],
+  "validation_replays": [
+    {
+      "path": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\tmp\\quantile_validation\\baseline_011_starter_211_0.json",
+      "sha256": "7d15ff3d6a91a54d7039832b895098414a41665721fbe39f9d573806685d34e8",
+      "seed": 211,
+      "configuration": {
+        "turnsPerDay": 24,
+        "episodeSteps": 720,
+        "townShopUnlockInterval": 3,
+        "townShopSellInterval": 4,
+        "townCenterSellInterval": 24,
+        "marketParams": {
+          "WHEAT": {
+            "base": 25,
+            "I0": 10000,
+            "T": 400,
+            "below_func": "sqrt",
+            "below_target": 0.8,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "CARROT": {
+            "base": 35,
+            "I0": 10000,
+            "T": 450,
+            "below_func": "hinge",
+            "below_target": 1.0,
+            "above_func": "sqrt",
+            "above_target": 0.7
+          },
+          "TOMATO": {
+            "base": 60,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "sqrt",
+            "above_target": 0.6
+          },
+          "STRAWBERRY": {
+            "base": 120,
+            "I0": 10000,
+            "T": 100,
+            "below_func": "sqrt",
+            "below_target": 0.7,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "MELON": {
+            "base": 250,
+            "I0": 10000,
+            "T": 300,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.6
+          },
+          "EGG": {
+            "base": 50,
+            "I0": 10000,
+            "T": 332,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "MILK": {
+            "base": 160,
+            "I0": 10000,
+            "T": 122,
+            "below_func": "sqrt",
+            "below_target": 0.6,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "WOOL": {
+            "base": 200,
+            "I0": 10000,
+            "T": 105,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.2
+          },
+          "FERTILIZER": {
+            "base": 100,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "linear",
+            "below_target": 0.4,
+            "above_func": "linear",
+            "above_target": 0.4
+          }
+        }
+      },
+      "recorded_states": 720
+    },
+    {
+      "path": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\tmp\\quantile_validation\\baseline_011_starter_211_1.json",
+      "sha256": "eb6886ab22982ec12f3965e6ec290d6f904ba5a7be9de3250fccde026d427171",
+      "seed": 211,
+      "configuration": {
+        "turnsPerDay": 24,
+        "episodeSteps": 720,
+        "townShopUnlockInterval": 3,
+        "townShopSellInterval": 4,
+        "townCenterSellInterval": 24,
+        "marketParams": {
+          "WHEAT": {
+            "base": 25,
+            "I0": 10000,
+            "T": 400,
+            "below_func": "sqrt",
+            "below_target": 0.8,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "CARROT": {
+            "base": 35,
+            "I0": 10000,
+            "T": 450,
+            "below_func": "hinge",
+            "below_target": 1.0,
+            "above_func": "sqrt",
+            "above_target": 0.7
+          },
+          "TOMATO": {
+            "base": 60,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "sqrt",
+            "above_target": 0.6
+          },
+          "STRAWBERRY": {
+            "base": 120,
+            "I0": 10000,
+            "T": 100,
+            "below_func": "sqrt",
+            "below_target": 0.7,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "MELON": {
+            "base": 250,
+            "I0": 10000,
+            "T": 300,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.6
+          },
+          "EGG": {
+            "base": 50,
+            "I0": 10000,
+            "T": 332,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "MILK": {
+            "base": 160,
+            "I0": 10000,
+            "T": 122,
+            "below_func": "sqrt",
+            "below_target": 0.6,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "WOOL": {
+            "base": 200,
+            "I0": 10000,
+            "T": 105,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.2
+          },
+          "FERTILIZER": {
+            "base": 100,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "linear",
+            "below_target": 0.4,
+            "above_func": "linear",
+            "above_target": 0.4
+          }
+        }
+      },
+      "recorded_states": 720
+    },
+    {
+      "path": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\tmp\\quantile_validation\\baseline_011_starter_223_0.json",
+      "sha256": "1ef1ff6b3ae057973b5225aa6baf04e8b69f40cf13d2a7a353c786e8cf73614d",
+      "seed": 223,
+      "configuration": {
+        "turnsPerDay": 24,
+        "episodeSteps": 720,
+        "townShopUnlockInterval": 3,
+        "townShopSellInterval": 4,
+        "townCenterSellInterval": 24,
+        "marketParams": {
+          "WHEAT": {
+            "base": 25,
+            "I0": 10000,
+            "T": 400,
+            "below_func": "sqrt",
+            "below_target": 0.8,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "CARROT": {
+            "base": 35,
+            "I0": 10000,
+            "T": 450,
+            "below_func": "hinge",
+            "below_target": 1.0,
+            "above_func": "sqrt",
+            "above_target": 0.7
+          },
+          "TOMATO": {
+            "base": 60,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "sqrt",
+            "above_target": 0.6
+          },
+          "STRAWBERRY": {
+            "base": 120,
+            "I0": 10000,
+            "T": 100,
+            "below_func": "sqrt",
+            "below_target": 0.7,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "MELON": {
+            "base": 250,
+            "I0": 10000,
+            "T": 300,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.6
+          },
+          "EGG": {
+            "base": 50,
+            "I0": 10000,
+            "T": 332,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "MILK": {
+            "base": 160,
+            "I0": 10000,
+            "T": 122,
+            "below_func": "sqrt",
+            "below_target": 0.6,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "WOOL": {
+            "base": 200,
+            "I0": 10000,
+            "T": 105,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.2
+          },
+          "FERTILIZER": {
+            "base": 100,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "linear",
+            "below_target": 0.4,
+            "above_func": "linear",
+            "above_target": 0.4
+          }
+        }
+      },
+      "recorded_states": 720
+    },
+    {
+      "path": "C:\\Users\\lucas\\Downloads\\Lucas\\Faculdade\\Competições em CD\\Kaggriculture\\tmp\\quantile_validation\\baseline_011_starter_223_1.json",
+      "sha256": "13433b30c1361ee887eb0b1ca62a57fd7fae1dbdfd79c53b3d9dd9dd87898505",
+      "seed": 223,
+      "configuration": {
+        "turnsPerDay": 24,
+        "episodeSteps": 720,
+        "townShopUnlockInterval": 3,
+        "townShopSellInterval": 4,
+        "townCenterSellInterval": 24,
+        "marketParams": {
+          "WHEAT": {
+            "base": 25,
+            "I0": 10000,
+            "T": 400,
+            "below_func": "sqrt",
+            "below_target": 0.8,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "CARROT": {
+            "base": 35,
+            "I0": 10000,
+            "T": 450,
+            "below_func": "hinge",
+            "below_target": 1.0,
+            "above_func": "sqrt",
+            "above_target": 0.7
+          },
+          "TOMATO": {
+            "base": 60,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "sqrt",
+            "above_target": 0.6
+          },
+          "STRAWBERRY": {
+            "base": 120,
+            "I0": 10000,
+            "T": 100,
+            "below_func": "sqrt",
+            "below_target": 0.7,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "MELON": {
+            "base": 250,
+            "I0": 10000,
+            "T": 300,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.6
+          },
+          "EGG": {
+            "base": 50,
+            "I0": 10000,
+            "T": 332,
+            "below_func": "hinge",
+            "below_target": 0.4,
+            "above_func": "log",
+            "above_target": 0.2
+          },
+          "MILK": {
+            "base": 160,
+            "I0": 10000,
+            "T": 122,
+            "below_func": "sqrt",
+            "below_target": 0.6,
+            "above_func": "linear",
+            "above_target": 1.6
+          },
+          "WOOL": {
+            "base": 200,
+            "I0": 10000,
+            "T": 105,
+            "below_func": "log",
+            "below_target": 0.2,
+            "above_func": "sq",
+            "above_target": 3.2
+          },
+          "FERTILIZER": {
+            "base": 100,
+            "I0": 10000,
+            "T": 200,
+            "below_func": "linear",
+            "below_target": 0.4,
+            "above_func": "linear",
+            "above_target": 0.4
+          }
+        }
+      },
+      "recorded_states": 720
+    }
+  ],
+  "settings": {
+    "horizon_turns": 24,
+    "stride": 12,
+    "tau": 0.25,
+    "l2": 0.01,
+    "max_sweeps": 80,
+    "empirical_baseline_method": "quadrature"
+  },
+  "fit": "Linear pinball + L2 with training-only standardization and bounded coordinate minimization",
+  "gate": "At least 2 episodes per split, >=30 eligible validation rows per product, >2% deployed pinball improvement over empirical baseline (out-of-domain uses empirical fallback), eligible learned coverage interval within fixed +/-0.15 of tau",
+  "limitations": "Small local synthetic-policy sample; paired sides and overlapping horizons are correlated. Validation is a deployment filter, not an untouched final test. New opponents/strategies can shift price distributions. Calibration applies only to single future spot prices at the trained horizon/tau; multi-lot revenue remains empirical.",
+  "model": {
+    "schema_version": 1,
+    "feature_names": [
+      "inventory_deviation",
+      "spot_price_ratio",
+      "day_fraction",
+      "hour_fraction",
+      "known_shop_units",
+      "future_shop_units",
+      "opponent_crop_tiles",
+      "opponent_animals",
+      "visible_units"
+    ],
+    "approved": true,
+    "quantile_tau": 0.25,
+    "horizon_turns": 24,
+    "models": {
+      "WOOL": {
+        "coefficients": [
+          1.0744646246659866,
+          -0.002373627426730472,
+          0.2612473722292335,
+          -0.013123301357319293,
+          -0.00047749992693790766,
+          -0.005491411931454505,
+          0.00024213508344490304,
+          0.0,
+          -7.933114838055168e-09,
+          -0.000936149487271169
+        ],
+        "feature_means": [
+          -1.0820607553366173,
+          1.086293103448276,
+          0.4756606397774687,
+          0.25,
+          2.3448275862068964,
+          0.06896551724137931,
+          0.0,
+          4.7155172413793105,
+          1.1594827586206897
+        ],
+        "feature_scales": [
+          1.7296880209109335,
+          0.2204595716022742,
+          0.27939920516467104,
+          0.25,
+          2.7326362422288204,
+          0.11173690859323897,
+          1e-06,
+          5.372432882529938,
+          3.2291100099871617
+        ],
+        "feature_min": [
+          -7.59047619047619,
+          0.005,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "feature_max": [
+          0.5619047619047619,
+          1.285,
+          0.9513212795549374,
+          0.5,
+          8.0,
+          0.25,
+          0.0,
+          12.0,
+          22.0
+        ],
+        "training_rows": 464,
+        "sweeps": 62,
+        "coordinate_change_converged": true,
+        "training_objective": 0.008377380861503587,
+        "approved": true
+      },
+      "FERTILIZER": {
+        "coefficients": [
+          0.7730622475876161,
+          -0.15297236290375016,
+          0.006392653565503284,
+          -0.013791062894918098,
+          0.0005033069799233181,
+          0.0,
+          0.0,
+          0.0,
+          3.20763066130329e-05,
+          -0.0014983469269245254
+        ],
+        "feature_means": [
+          0.511271551724138,
+          0.7956465517241379,
+          0.4756606397774687,
+          0.25,
+          0.0,
+          0.0,
+          0.0,
+          4.7155172413793105,
+          3.122844827586207
+        ],
+        "feature_scales": [
+          0.4151921028802738,
+          0.1660274050036539,
+          0.27939920516467104,
+          0.25,
+          1e-06,
+          1e-06,
+          1e-06,
+          5.372432882529938,
+          4.425630153072395
+        ],
+        "feature_min": [
+          0.0,
+          0.48,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "feature_max": [
+          1.305,
+          1.0,
+          0.9513212795549374,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          12.0,
+          12.0
+        ],
+        "training_rows": 464,
+        "sweeps": 80,
+        "coordinate_change_converged": false,
+        "training_objective": 0.0022726759192205665,
+        "approved": true
+      }
+    },
+    "training_configuration": {
+      "turnsPerDay": 24,
+      "episodeSteps": 720,
+      "townShopUnlockInterval": 3,
+      "townShopSellInterval": 4,
+      "townCenterSellInterval": 24,
+      "marketParams": {
+        "WHEAT": {
+          "base": 25,
+          "I0": 10000,
+          "T": 400,
+          "below_func": "sqrt",
+          "below_target": 0.8,
+          "above_func": "log",
+          "above_target": 0.2
+        },
+        "CARROT": {
+          "base": 35,
+          "I0": 10000,
+          "T": 450,
+          "below_func": "hinge",
+          "below_target": 1.0,
+          "above_func": "sqrt",
+          "above_target": 0.7
+        },
+        "TOMATO": {
+          "base": 60,
+          "I0": 10000,
+          "T": 200,
+          "below_func": "hinge",
+          "below_target": 0.4,
+          "above_func": "sqrt",
+          "above_target": 0.6
+        },
+        "STRAWBERRY": {
+          "base": 120,
+          "I0": 10000,
+          "T": 100,
+          "below_func": "sqrt",
+          "below_target": 0.7,
+          "above_func": "linear",
+          "above_target": 1.6
+        },
+        "MELON": {
+          "base": 250,
+          "I0": 10000,
+          "T": 300,
+          "below_func": "log",
+          "below_target": 0.2,
+          "above_func": "sq",
+          "above_target": 3.6
+        },
+        "EGG": {
+          "base": 50,
+          "I0": 10000,
+          "T": 332,
+          "below_func": "hinge",
+          "below_target": 0.4,
+          "above_func": "log",
+          "above_target": 0.2
+        },
+        "MILK": {
+          "base": 160,
+          "I0": 10000,
+          "T": 122,
+          "below_func": "sqrt",
+          "below_target": 0.6,
+          "above_func": "linear",
+          "above_target": 1.6
+        },
+        "WOOL": {
+          "base": 200,
+          "I0": 10000,
+          "T": 105,
+          "below_func": "log",
+          "below_target": 0.2,
+          "above_func": "sq",
+          "above_target": 3.2
+        },
+        "FERTILIZER": {
+          "base": 100,
+          "I0": 10000,
+          "T": 200,
+          "below_func": "linear",
+          "below_target": 0.4,
+          "above_func": "linear",
+          "above_target": 0.4
+        }
+      }
+    },
+    "provenance": {
+      "training_replay_sha256": [
+        "c3f1b3039717753caca5a885dd9b52bdd31cd52726b3ba5bcad0e90aeea80c21",
+        "6a83ab2b2d8581b27c7e02182f2877e0a5ab94d1c82e004dc7574e8dd0b47085",
+        "a0baf03683d7a074c27c4f9493a52949e57d093c30e5f4aa8fe3694ddb1081e2",
+        "f4d999b5700d01fe7692ce5f395be0e61ebd93c21595fedd7ff8932ee8ce87f1"
+      ],
+      "validation_replay_sha256": [
+        "7d15ff3d6a91a54d7039832b895098414a41665721fbe39f9d573806685d34e8",
+        "eb6886ab22982ec12f3965e6ec290d6f904ba5a7be9de3250fccde026d427171",
+        "1ef1ff6b3ae057973b5225aa6baf04e8b69f40cf13d2a7a353c786e8cf73614d",
+        "13433b30c1361ee887eb0b1ca62a57fd7fae1dbdfd79c53b3d9dd9dd87898505"
+      ]
+    }
+  }
+}

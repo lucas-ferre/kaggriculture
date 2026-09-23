@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "feature_names": [
+    "inventory_deviation",
+    "spot_price_ratio",
+    "day_fraction",
+    "hour_fraction",
+    "known_shop_units",
+    "future_shop_units",
+    "opponent_crop_tiles",
+    "opponent_animals",
+    "visible_units"
+  ],
+  "approved": true,
+  "quantile_tau": 0.25,
+  "horizon_turns": 24,
+  "models": {
+    "WOOL": {
+      "coefficients": [
+        1.0744646246659866,
+        -0.002373627426730472,
+        0.2612473722292335,
+        -0.013123301357319293,
+        -0.00047749992693790766,
+        -0.005491411931454505,
+        0.00024213508344490304,
+        0.0,
+        -7.933114838055168e-09,
+        -0.000936149487271169
+      ],
+      "feature_means": [
+        -1.0820607553366173,
+        1.086293103448276,
+        0.4756606397774687,
+        0.25,
+        2.3448275862068964,
+        0.06896551724137931,
+        0.0,
+        4.7155172413793105,
+        1.1594827586206897
+      ],
+      "feature_scales": [
+        1.7296880209109335,
+        0.2204595716022742,
+        0.27939920516467104,
+        0.25,
+        2.7326362422288204,
+        0.11173690859323897,
+        1e-06,
+        5.372432882529938,
+        3.2291100099871617
+      ],
+      "feature_min": [
+        -7.59047619047619,
+        0.005,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature_max": [
+        0.5619047619047619,
+        1.285,
+        0.9513212795549374,
+        0.5,
+        8.0,
+        0.25,
+        0.0,
+        12.0,
+        22.0
+      ],
+      "training_rows": 464,
+      "sweeps": 62,
+      "coordinate_change_converged": true,
+      "training_objective": 0.008377380861503587,
+      "approved": true
+    },
+    "FERTILIZER": {
+      "coefficients": [
+        0.7730622475876161,
+        -0.15297236290375016,
+        0.006392653565503284,
+        -0.013791062894918098,
+        0.0005033069799233181,
+        0.0,
+        0.0,
+        0.0,
+        3.20763066130329e-05,
+        -0.0014983469269245254
+      ],
+      "feature_means": [
+        0.511271551724138,
+        0.7956465517241379,
+        0.4756606397774687,
+        0.25,
+        0.0,
+        0.0,
+        0.0,
+        4.7155172413793105,
+        3.122844827586207
+      ],
+      "feature_scales": [
+        0.4151921028802738,
+        0.1660274050036539,
+        0.27939920516467104,
+        0.25,
+        1e-06,
+        1e-06,
+        1e-06,
+        5.372432882529938,
+        4.425630153072395
+      ],
+      "feature_min": [
+        0.0,
+        0.48,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "feature_max": [
+        1.305,
+        1.0,
+        0.9513212795549374,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        12.0,
+        12.0
+      ],
+      "training_rows": 464,
+      "sweeps": 80,
+      "coordinate_change_converged": false,
+      "training_objective": 0.0022726759192205665,
+      "approved": true
+    }
+  },
+  "training_configuration": {
+    "turnsPerDay": 24,
+    "episodeSteps": 720,
+    "townShopUnlockInterval": 3,
+    "townShopSellInterval": 4,
+    "townCenterSellInterval": 24,
+    "marketParams": {
+      "WHEAT": {
+        "base": 25,
+        "I0": 10000,
+        "T": 400,
+        "below_func": "sqrt",
+        "below_target": 0.8,
+        "above_func": "log",
+        "above_target": 0.2
+      },
+      "CARROT": {
+        "base": 35,
+        "I0": 10000,
+        "T": 450,
+        "below_func": "hinge",
+        "below_target": 1.0,
+        "above_func": "sqrt",
+        "above_target": 0.7
+      },
+      "TOMATO": {
+        "base": 60,
+        "I0": 10000,
+        "T": 200,
+        "below_func": "hinge",
+        "below_target": 0.4,
+        "above_func": "sqrt",
+        "above_target": 0.6
+      },
+      "STRAWBERRY": {
+        "base": 120,
+        "I0": 10000,
+        "T": 100,
+        "below_func": "sqrt",
+        "below_target": 0.7,
+        "above_func": "linear",
+        "above_target": 1.6
+      },
+      "MELON": {
+        "base": 250,
+        "I0": 10000,
+        "T": 300,
+        "below_func": "log",
+        "below_target": 0.2,
+        "above_func": "sq",
+        "above_target": 3.6
+      },
+      "EGG": {
+        "base": 50,
+        "I0": 10000,
+        "T": 332,
+        "below_func": "hinge",
+        "below_target": 0.4,
+        "above_func": "log",
+        "above_target": 0.2
+      },
+      "MILK": {
+        "base": 160,
+        "I0": 10000,
+        "T": 122,
+        "below_func": "sqrt",
+        "below_target": 0.6,
+        "above_func": "linear",
+        "above_target": 1.6
+      },
+      "WOOL": {
+        "base": 200,
+        "I0": 10000,
+        "T": 105,
+        "below_func": "log",
+        "below_target": 0.2,
+        "above_func": "sq",
+        "above_target": 3.2
+      },
+      "FERTILIZER": {
+        "base": 100,
+        "I0": 10000,
+        "T": 200,
+        "below_func": "linear",
+        "below_target": 0.4,
+        "above_func": "linear",
+        "above_target": 0.4
+      }
+    }
+  },
+  "provenance": {
+    "training_replay_sha256": [
+      "c3f1b3039717753caca5a885dd9b52bdd31cd52726b3ba5bcad0e90aeea80c21",
+      "6a83ab2b2d8581b27c7e02182f2877e0a5ab94d1c82e004dc7574e8dd0b47085",
+      "a0baf03683d7a074c27c4f9493a52949e57d093c30e5f4aa8fe3694ddb1081e2",
+      "f4d999b5700d01fe7692ce5f395be0e61ebd93c21595fedd7ff8932ee8ce87f1"
+    ],
+    "validation_replay_sha256": [
+      "7d15ff3d6a91a54d7039832b895098414a41665721fbe39f9d573806685d34e8",
+      "eb6886ab22982ec12f3965e6ec290d6f904ba5a7be9de3250fccde026d427171",
+      "1ef1ff6b3ae057973b5225aa6baf04e8b69f40cf13d2a7a353c786e8cf73614d",
+      "13433b30c1361ee887eb0b1ca62a57fd7fae1dbdfd79c53b3d9dd9dd87898505"
+    ]
+  }
+}
