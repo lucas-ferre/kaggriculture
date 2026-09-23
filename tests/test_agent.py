@@ -81,6 +81,20 @@ class ExecutionTests(unittest.TestCase):
         self.assertEqual(first, repeated)
         self.assertEqual(bot.last_step, 0)
 
+    def test_final_day_liquidates_entire_shed_including_feed_and_fertilizer(self):
+        bot = FarmAgent()
+        bot.plan = CropPlan(None, None, 0, 0)
+        obs_final = observation(step=719)
+        obs_final["day"] = 29
+        obs_final["hour"] = 23
+        obs_final["private"]["shed"] = {"WHEAT": 20, "FERTILIZER": 15, "MELON": 5}
+        obs_final["farms"][0]["money"] = 1000
+        orders, _ = bot._market_orders(obs_final, game_configuration(), obs_final["private"]["shed"])
+        sold = {o[1]: o[2] for o in orders if o[0] == "SELL"}
+        self.assertEqual(sold.get("WHEAT"), 20)
+        self.assertEqual(sold.get("FERTILIZER"), 15)
+        self.assertEqual(sold.get("MELON"), 5)
+
 
 if __name__ == "__main__":
     unittest.main()

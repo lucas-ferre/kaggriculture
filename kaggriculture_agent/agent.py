@@ -158,6 +158,10 @@ class FarmAgent:
                  sum((Counter(inv) for inv in private.get("inventories", [])), Counter()))
         fertilizer_hold = fertilizer_reserve(obs, config, self.policy, predicted_shed,
                                              predicted_carried_fertilizer=cargo.get("FERTILIZER", 0))
+        final_day = int(obs["day"]) == (int(config["episodeSteps"]) - 2) // tpd
+        if final_day:
+            feed_reserve = 0
+            fertilizer_hold = 0
         midnight_pressure = (obs["hour"] >= max(0, tpd - 2) and
                              sum(predicted_shed.values()) + sum(cargo.values()) > capacity)
         returning = sum(cargo.values()) if obs["hour"] >= max(0, tpd - 2) else 0
@@ -226,7 +230,6 @@ class FarmAgent:
         expected_plots = max(len(plants), sum(self.plan.targets.values()))
         planned_animals = sum(self.plan.animal_targets.values())
         work_left = expected_plots > 0 or animals or planned_animals or any(sum(inv.values()) for inv in private.get("inventories", []))
-        final_day = int(obs["day"]) == (int(config["episodeSteps"]) - 2) // tpd
         final_jobs = sum(tile.get("yield_units", 0) > 0 and int(obs["day"]) - tile["planted_day"] >= CROPS[tile["crop"]].first
                          for _, tile in plants)
         final_jobs += sum(isinstance(tile, dict) and tile.get("animal") in ANIMALS and

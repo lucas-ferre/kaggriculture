@@ -307,6 +307,17 @@ class PortfolioTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 PolicyConfig(**kwargs)
 
+    def test_crop_clash_penalizes_crop_flooded_by_opponent(self):
+        obs_base = observation()
+        obs_base["farms"].append({"tiles": [[None] * 10 for _ in range(10)], "money": 3000, "hands": [], "farmer": [4, 4]})
+        plan_base = CropPlanner().plan(obs_base, {}, ForecastMarket())
+        opp_tiles = [[{"kind": "PLANT", "crop": "MELON", "planted_day": 0, "yield_units": 0}
+                      if x < 2 and y < 5 else None for x in range(10)] for y in range(10)]
+        obs_opp = observation()
+        obs_opp["farms"].append({"tiles": opp_tiles, "money": 3000, "hands": [], "farmer": [4, 4]})
+        plan_opp = CropPlanner().plan(obs_opp, {}, ForecastMarket())
+        self.assertLess(plan_opp.scores["MELON"], plan_base.scores["MELON"])
+
 
 if __name__ == "__main__":
     unittest.main()

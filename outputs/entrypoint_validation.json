@@ -6,11 +6,11 @@
     "DONE"
   ],
   "money": [
-    72291.0,
-    72291.0
+    100495.0,
+    100495.0
   ],
   "errors": [],
   "bad_statuses": [],
   "engine_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
-  "archive_sha256": "26f1f49797fb553162e3d5eccf51717ad56c29cd2221b738314f2e981f0ba334"
+  "archive_sha256": "ac1a2d434a5e91ad47e813e1eec753f5a83fef0eb61eab86805c93705ef4eb74"
 }

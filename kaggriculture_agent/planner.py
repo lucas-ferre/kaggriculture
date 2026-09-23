@@ -501,8 +501,9 @@ class CropPlanner:
             gain = revenue(crop, existing[crop] + addition) - revenue(crop, existing[crop])
             seed_cost = max(0, addition * cycles - int(seeds.get(crop, 0))) * CROPS[crop].seed
             profit = gain - seed_cost - addition * actions * config.labor_cost_per_action
-            if specialist == "contrarian" and opposing[crop]:
-                profit -= max(0.0, gain) * min(.25, opposing[crop] * .015)
+            if opposing[crop]:
+                rate = 0.04 if specialist == "contrarian" else 0.025
+                profit -= max(0.0, gain) * min(0.40, opposing[crop] * rate)
             if specialist == "cashflow" and crop in LONG_CROPS:
                 profit *= .6
             if CROPS[crop].ongoing and profit > 0:
